@@ -10,30 +10,32 @@ import java.util.List;
 @Repository
 public class ProductRepository {
 
+    private final JPAProductRepository repo;
+
     @Autowired
-    JPAProductRepository repo;
-    public ProductGuestDTO getByName(String name) {
-        livsmedel product = repo.findByLivsmedelsnamn(name);
-        return convertToProductGuestDTO(product);
+    public ProductRepository(JPAProductRepository repo) {
+        this.repo = repo;
     }
 
-    public ProductGuestDTO getById(String id) {
+    public livsmedel getByName(String name) {
+        livsmedel product = repo.findByLivsmedelsnamn(name);
+        return product;
+    }
+
+    public List<livsmedel> getAllByName(String name) {
+        List<livsmedel> list = repo.findAllByName(name);
+        return list;
+    }
+
+    public livsmedel getById(String id) {
         livsmedel product = repo.findById(id).orElse(null);
-        return convertToProductGuestDTO(product);
+        return product;
     }
 
     public List<livsmedel> getAll() {
         return repo.findAll();
     }
 
-    private ProductGuestDTO convertToProductGuestDTO (livsmedel product) {
-        return new ProductGuestDTO(
-                product.getLivsmedelsnamn(),
-                product.getEnergi_kcal(),
-                product.getFett_totalt_g(),
-                product.getProtein_g(),
-                product.getKolhydrater_g()
-        );
-    }
+
 
 }
