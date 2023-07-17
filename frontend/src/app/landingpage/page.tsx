@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import React from 'react'
 
-const landingPage = () => {
+const landing = () => {
 
   const handleSearch = () => {
     
@@ -19,11 +19,11 @@ const landingPage = () => {
       <button className='login' onClick={handleSearch}>
         Login
       </button>
-        <Link href={`/homepage`} className='continue-link'>Continue without registration</Link>
+        <Link href={`/home`} className='continue-link'>Continue without registration</Link>
       </div>
       </div>
     </>
   )
 }
 
-export default landingPage
+export default landing
