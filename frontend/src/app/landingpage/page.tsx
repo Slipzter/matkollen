@@ -19,7 +19,7 @@ const landingPage = () => {
       <button className='login' onClick={handleSearch}>
         Login
       </button>
-        <Link href={`/homepage`} className='continue-link'>Continue without registration</Link>
+        <Link href={`/home`} className='continue-link'>Continue without registration</Link>
       </div>
       </div>
     </>
