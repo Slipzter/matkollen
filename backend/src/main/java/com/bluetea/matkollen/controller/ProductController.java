@@ -5,6 +5,7 @@ import com.bluetea.matkollen.model.ProductGuestDTO;
 import com.bluetea.matkollen.repository.ProductRepository;
 import com.bluetea.matkollen.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +23,7 @@ public class ProductController {
         this.service = service;
     }
 
-    @GetMapping("/search/{productName}")
+    @GetMapping(value = "/search/{productName}")
     public ResponseEntity<List<ProductGuestDTO>> searchProductByName(@PathVariable String productName) {
         List<ProductGuestDTO> productGuestDTO = service.getAllByName(productName);
         if (productGuestDTO != null) {

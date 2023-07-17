@@ -14,10 +14,13 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
+@ActiveProfiles("test")
 class MatkollenApplicationTests {
 
 
@@ -34,8 +37,8 @@ class MatkollenApplicationTests {
 	@Test
 	void shouldGetProductByName(){
 		String uri = "http://localhost:%s/search/Broccoli".formatted(port);
-		ResponseEntity<ProductGuestDTO> exchange = restTemplate.exchange(uri, HttpMethod.GET, HttpEntity.EMPTY, ProductGuestDTO.class);
+		ResponseEntity<ProductGuestDTO[]> exchange = restTemplate.exchange(uri, HttpMethod.GET, HttpEntity.EMPTY, ProductGuestDTO[].class);
 		assertThat(exchange.getStatusCode()).isEqualTo(HttpStatus.OK);
-		assertThat(exchange.getBody().livsmedelsnamn()).isNotNull();
+		assertThat(exchange.getBody()[0].livsmedelsnamn()).isNotNull();
 	}
 }
