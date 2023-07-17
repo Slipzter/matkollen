@@ -39,6 +39,6 @@ class MatkollenApplicationTests {
 		String uri = "http://localhost:%s/search/Broccoli".formatted(port);
 		ResponseEntity<ProductGuestDTO[]> exchange = restTemplate.exchange(uri, HttpMethod.GET, HttpEntity.EMPTY, ProductGuestDTO[].class);
 		assertThat(exchange.getStatusCode()).isEqualTo(HttpStatus.OK);
-		assertThat(exchange.getBody()[0].livsmedelsnamn()).isNotNull();
+		assertThat(exchange.getBody()[0].livsmedelsnamn()).isEqualTo("Broccoli");
 	}
 }

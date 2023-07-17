@@ -24,6 +24,7 @@ public class ProductService {
     }
 
     public List<ProductGuestDTO> getAllByName(String name) {
+        String formatted = name.replace("%20", " ");
         List<ProductGuestDTO> list = repo.getAllByName(name).stream().map(this::convertToProductGuestDTO).toList();
         if (list.size() == 0) {
             return null;
