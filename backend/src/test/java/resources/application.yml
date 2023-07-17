@@ -1,0 +1,33 @@
+debug: true
+server:
+  port: 9999
+spring:
+  #
+  # Add appropriate configuration to seed the database here
+  #
+  sql:
+    output:
+      ansi:
+        enabled: always
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password: sa
+    hikari:
+      connectionTimeout: 20000
+      maximumPoolSize: 5
+  #
+  #  Add appropriate JPA config here
+  #
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop # none, create ...
+logging:
+  level:
+    org:
+      springframework:
+        boot:
+          autoconfigure: ERROR
