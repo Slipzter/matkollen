@@ -18,6 +18,7 @@ public class SecurityConfig {
                         auth.requestMatchers("/**").permitAll()
                 )
                 .cors(withDefaults())
-            .build();  }
+            .build();
+    }
 }
 

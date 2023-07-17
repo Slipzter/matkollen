@@ -25,6 +25,9 @@ public class ProductService {
 
     public List<ProductGuestDTO> getAllByName(String name) {
         List<ProductGuestDTO> list = repo.getAllByName(name).stream().map(this::convertToProductGuestDTO).toList();
+        if (list.size() == 0) {
+            return null;
+        }
         return list;
     }
 
