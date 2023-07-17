@@ -5,7 +5,7 @@ export default async function handler(
     res: NextApiResponse
 ) {
     const { q } = req.query;
-    console.log("AT THE API");
+
 
     res.status(200).json({message: "Hej!"});
 }
