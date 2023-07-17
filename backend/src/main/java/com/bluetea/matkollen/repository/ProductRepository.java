@@ -23,7 +23,7 @@ public class ProductRepository {
     }
 
     public List<livsmedel> getAllByName(String name) {
-        List<livsmedel> list = repo.findAllByLivsmedelsnamn(name);
+        List<livsmedel> list = repo.findAllByName(name);
         return list;
     }
 

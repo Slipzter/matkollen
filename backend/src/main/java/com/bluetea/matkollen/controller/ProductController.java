@@ -19,7 +19,6 @@ import java.util.Properties;
 public class ProductController {
 
     private final ProductService service;
-
     @Autowired
     public ProductController(ProductService service) {
         this.service = service;
