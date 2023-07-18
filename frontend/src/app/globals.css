@@ -84,3 +84,14 @@ h1{
 .search-result-card:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.search-img{
+  display: block;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+.card-product-link{
+  text-decoration: none;
+  color: #333
+}

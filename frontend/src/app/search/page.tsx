@@ -23,8 +23,11 @@ const SearchPage = () => {
    console.log('SEARCH PARAMS', encodedSearchQuery);
 }, []);
     return (
-    <>    
-    <img src="pic1.png" alt="" />  
+    <>   
+    
+        <div>
+         <img src="https://images.pexels.com/photos/1660027/pexels-photo-1660027.jpeg" alt="" className="search-img"  /> 
+        </div> 
             <div>
             {products.map((product: Product, index: number)=>{
                 return (
