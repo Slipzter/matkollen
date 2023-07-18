@@ -24,12 +24,10 @@ const SearchPage = () => {
 }, []);
     return (
     <>      
-            <h3>Search result </h3>
-            <div className='search-result-card'>
-           
+            <div>
             {products.map((product: Product, index: number)=>{
                 return (
-                    <div>
+                    <div className='search-result-card'>
                         <Card key={index} livsmedelsnamn={product.livsmedelsnamn} />
                     </div>
                 )
