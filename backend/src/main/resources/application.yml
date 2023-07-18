@@ -3,13 +3,14 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/tim
-    username: tim
-    password: 123
+    url: ${AZURE_CONN_STRING}
+    username: ${AZURE_USERNAME}
+    password: ${AZURE_PASSWORD}
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: none
   sql:
     init:
       platform: postgresql
