@@ -6,7 +6,7 @@ function NutrientCard(props: Nutrient) {
   const percentageAmount = props.percentage;
 
   return (
-    <article className="nutrient-card">
+    <article className="card nutrient-card">
       <div>
         <h3>
           {props.name}

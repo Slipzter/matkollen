@@ -16,7 +16,7 @@ const Card = (props : Product) => {
         // as ="script"
         className ='card-product-link'
         >
-          <div className='search-result-card'>
+          <div className='card'>
           {props.livsmedelsnamn}
           </div>
           </Link>
