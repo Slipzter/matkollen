@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Product } from "@/types";
-import Card from "../card/card";
+import Card from "../component/Card";
 
 const SearchPage = () => {
     const search = useSearchParams();
@@ -23,12 +23,13 @@ const SearchPage = () => {
    console.log('SEARCH PARAMS', encodedSearchQuery);
 }, []);
     return (
-    <>      
+    <>    
+    <img src="pic1.png" alt="" />  
             <div>
             {products.map((product: Product, index: number)=>{
                 return (
-                    <div className='search-result-card'>
-                        <Card key={index} livsmedelsnamn={product.livsmedelsnamn} />
+                    <div key={index}>
+                        <Card  livsmedelsnamn={product.livsmedelsnamn} />
                     </div>
                 )
             })}
