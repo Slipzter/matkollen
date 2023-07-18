@@ -14,7 +14,7 @@ const SearchInput = () => {
         event.preventDefault();
 
         const encodedSearchQuery = encodeURI(searchQuery);
-        router.push(/search?q=${encodedSearchQuery});
+        router.push(`/search?q=${encodedSearchQuery}`);
     };
 
     return (

@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Home() {
     return (
     <>
-    <main className="flex justify-center align-middle">
+    <main className="home">
         <SearchInput />
     </main>
     </>
