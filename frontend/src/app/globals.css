@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *{
@@ -21,7 +24,6 @@ font-family:'Poppins', sans-serif;
   /* justify-content: flex-end; */
   padding: 20px;
 }
-
 
 .footer{
   display: flex;
@@ -64,6 +66,7 @@ font-family:'Poppins', sans-serif;
   max-width: 150px;
   height: auto;
 }
+
 h1{
   color:black;
   text-align: center;
@@ -84,3 +87,35 @@ h1{
 .search-result-card:hover{
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
+
+.search-bar {
+  border: 0.5px solid black;
+  border-right: none;
+  border-radius: 50px 0 0 50px;
+  transition: 0.3s;
+  width: 90%;
+  padding: 20px 10px;
+  margin: 20px; 
+  margin-top: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar:hover{
+  box-shadow: 0 8px 16px 0 rgba(220, 220, 220, 0.2);
+}
+.search-bar:focus{
+  outline: none;
+}
+
+.search-form button {
+  border: 0.5px solid black;
+  border-left: none;
+  border-radius: 0 50px 50px 0;
+  width: 20%;
+  padding: 20px 10px;
+  margin: 20px; 
+  margin-top: 50%;
+  margin-left: 0;
+  cursor: pointer;
+ }
