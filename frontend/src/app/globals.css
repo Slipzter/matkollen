@@ -91,7 +91,63 @@ h1{
   height: 250px;
   overflow: hidden;
 }
+
 .card-product-link{
   text-decoration: none;
   color: #333
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info__image {
+  width: 20em;
+  align-self: center;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 1em;
+}
+
+.product-info__title {
+  margin: 0;
+  font-size: 2em;
+}
+
+.product-info__card-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-info__energy-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 90%;
+  height: 8em;
+  margin: 1em 0;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.nutrient-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  width: 90%;
+  height: 4em;
+  margin: 0.6em 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.nutrient-card__progress {
+  height: 10px;
+  border-radius: 20px;
+}
+
+.nutrient-card__progress-filling {
+  height: 10px;
+  border-radius: 20px;
 }

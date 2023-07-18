@@ -6,3 +6,9 @@ export type Product =  {
     livsmedelsnamn  : String,
     protein_g ?: String
 }
+
+export type Nutrient = {
+  name: String,
+  color?: String,
+  percentage?: number,
+}
