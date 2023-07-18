@@ -1,5 +1,5 @@
-import SearchInput from "@/app/SearchInput";
 import Link from "next/link";
+import SearchInput from "../SearchInput";
 
 export default function Home() {
     return (
