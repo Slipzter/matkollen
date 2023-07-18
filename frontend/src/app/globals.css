@@ -79,6 +79,8 @@ h1{
   margin: 20px; 
   margin-left: auto;
   margin-right: auto;
+  border-radius: 4px;
+  padding: 4px;
 }
 
 .card:hover{
@@ -91,7 +93,51 @@ h1{
   height: 250px;
   overflow: hidden;
 }
+
 .card-product-link{
   text-decoration: none;
   color: #333
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-info__image {
+  width: 20em;
+  align-self: center;
+  border-radius: 0 0 8px 8px;
+  margin-bottom: 1em;
+}
+
+.product-info__title {
+  margin: 0;
+  font-size: 2em;
+}
+
+.product-info__card-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-info__energy-card {
+  height: 8em;
+  margin: 1em 0;
+}
+
+.nutrient-card {
+  margin: 0.6em 0;
+}
+
+.nutrient-card__progress {
+  height: 10px;
+  border-radius: 20px;
+}
+
+.nutrient-card__progress-filling {
+  height: 10px;
+  border-radius: 20px;
 }
