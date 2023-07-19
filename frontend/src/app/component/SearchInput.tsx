@@ -22,7 +22,7 @@ const SearchInput = () => {
         value={searchQuery}
         onChange={event => setSearchQuery(event.target.value)}
         className="search-bar"
-        placeholder="   Sök efter mat här"/>
+        placeholder="Sök efter mat här"/>
         <button type="submit"><i className="fa fa-search"></i></button>
         </form>
     )

@@ -36,11 +36,11 @@ function ProductInfoPage() {
       <h1 className="product-info__title">{name}</h1>
       <section className="product-info__card-section">
         <article className="card product-info__energy-card">
-          <h3>Energy per 100g</h3>
+          <h3>Energi per 100g</h3>
           <h2>{kcal} Kcal</h2>
         </article>
-          <NutrientCard name={'Carbs'} color={'blueviolet'} percentage={parseInt(carbs!)}/>
-          <NutrientCard name={'Fat'} color={'orange'} percentage={parseInt(fat!)}/>
+          <NutrientCard name={'Kålhydrater'} color={'blueviolet'} percentage={parseInt(carbs!)}/>
+          <NutrientCard name={'Fett'} color={'orange'} percentage={parseInt(fat!)}/>
           <NutrientCard name={'Protein'} color={'red'} percentage={parseInt(protein!)}/>
       </section>
     </div>
