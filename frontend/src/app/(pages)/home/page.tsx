@@ -5,6 +5,7 @@ export default function Home() {
     return (
     <>
     <main className="home">
+      <div className="home__image"></div>
         <SearchInput />
     </main>
     </>
