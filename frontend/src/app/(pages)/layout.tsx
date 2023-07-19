@@ -20,8 +20,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
-      <body>
+      <>
         <header>
           <button className="nav-back" onClick={handleGoBack}>Back</button>
           <nav>
@@ -32,7 +31,6 @@ export default function RootLayout({
           </nav>
         </header>
         {children}
-      </body>
-    </html>
+      </>
   );
 }

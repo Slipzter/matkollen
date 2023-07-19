@@ -24,7 +24,7 @@ header {
 }
 
 .landing{
-  background-image: url("https://assets.mynetdiary.com/blog/calorie-planning.jpg");
+  background-image: url("/food.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100vh;
@@ -73,7 +73,7 @@ header {
 }
 
 .logo-img {
-  max-width: 300px;
+  width: 350px;
   height: auto;
   border-radius: 12px;
 }
