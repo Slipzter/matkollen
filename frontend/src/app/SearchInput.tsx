@@ -17,12 +17,12 @@ const SearchInput = () => {
     };
 
     return (
-        <form className="flex justify-center w-2/3 search-form" onSubmit={onSearch}>
+        <form className="search-form" onSubmit={onSearch}>
         <input 
         value={searchQuery}
         onChange={event => setSearchQuery(event.target.value)}
         className="search-bar"
-        placeholder="Vilken mat behöver du?"/>
+        placeholder="   Sök efter mat här"/>
         <button type="submit"><i className="fa fa-search"></i></button>
         </form>
     )
