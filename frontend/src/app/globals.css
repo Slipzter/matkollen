@@ -16,6 +16,13 @@ font-family:'Poppins', sans-serif;
   justify-content: center;
 }
 
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1vh;
+}
+
 .landing{
   background-image: url("https://assets.mynetdiary.com/blog/calorie-planning.jpg");
   background-size: cover;
