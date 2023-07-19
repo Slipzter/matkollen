@@ -23,13 +23,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <header>
-        <div className="container">
           <button className="nav-back" onClick={handleGoBack}>Back</button>
-        </div>
-          <nav className="sticy top-0 px-2 py-4">
+          <nav>
             <ul className="flex flex-row items-start gap-2 whitespace-nowrap">
-              <Link href="/landingpage">LOG IN</Link>
-              <Link href="/home">HOME</Link>
+              <Link className="nav-landing" href="/landingpage">LOG IN</Link>
+              <Link className="nav-home" href="/home">HOME</Link>
             </ul>
           </nav>
         </header>

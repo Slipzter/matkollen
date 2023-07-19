@@ -192,3 +192,60 @@ h1{
   margin-left: 0;
   cursor: pointer;
  }
+
+ .nav-back {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5vh;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.nav-back:hover {
+  background-color: #0056b3;
+}
+
+.nav-landing {
+  padding: 10px 15px;
+  background-color: #9ce885;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.5vh;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-landing:hover {
+  background-color: #4eca2c;
+}
+
+.nav-home {
+  padding: 10px 15px;
+  background-color: #e8bd85;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-size: 1.5vh;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-home:hover {
+  background-color: #ac8c63;
+}
+
+nav {
+  padding: 1vh;
+}
