@@ -20,11 +20,9 @@ const SearchPage = () => {
     }
     getProducts();
 
-   console.log('SEARCH PARAMS', encodedSearchQuery);
 }, []);
     return (
     <>   
-    
         <div>
          <img src="https://images.pexels.com/photos/1660027/pexels-photo-1660027.jpeg" alt="" className="search-img"  /> 
         </div> 
@@ -32,7 +30,7 @@ const SearchPage = () => {
             {products.map((product: Product, index: number)=>{
                 return (
                     <div key={index}>
-                        <Card  livsmedelsnamn={product.livsmedelsnamn} />
+                        <Card searchQuery={encodedSearchQuery} livsmedelsnamn={product.livsmedelsnamn} energi_kcal={product.energi_kcal} fett_totalt_g={product.fett_totalt_g} kolhydrater_g={product.kolhydrater_g} protein_g={product.protein_g}/>
                     </div>
                 )
             })}

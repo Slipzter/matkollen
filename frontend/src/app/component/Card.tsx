@@ -7,16 +7,21 @@ const Card = (props : Product) => {
     <>
         <Link
         href={{
-          pathname: '/productnamn',
+          pathname: '/productInfo',
           query: {
-            search: `${props.livsmedelsnamn}`
+            name: props.livsmedelsnamn,
+            carbs: props.kolhydrater_g,
+            fat: props.fett_totalt_g,
+            protein: props.protein_g,
+            kcal: props.energi_kcal,
+            search: props.searchQuery
           }
         }}
         passHref
         className ='card-product-link'
         >
           <div className='card'>
-          {props.livsmedelsnamn}
+            {props.livsmedelsnamn}
           </div>
           </Link>
       </>
