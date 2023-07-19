@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Product } from "@/types";
-import Card from "../component/Card";
+import Card from "../../component/Card";
 
 const SearchPage = () => {
     const search = useSearchParams();

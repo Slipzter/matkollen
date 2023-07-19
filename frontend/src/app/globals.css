@@ -69,14 +69,15 @@ header {
 }
 
 .logo {
-  margin-bottom: 20px;
-  margin-left:-200px
+  margin: 10vh 0 30vh 0;
 }
 
 .logo-img {
-  max-width: 150px;
+  max-width: 300px;
   height: auto;
+  border-radius: 12px;
 }
+
 h1{
   color:black;
   text-align: center;
