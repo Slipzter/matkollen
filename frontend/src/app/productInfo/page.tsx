@@ -1,27 +1,48 @@
-import NutrientCard from "./NutrientCard"
+'use client'
 
+import { Product } from "@/types";
+import NutrientCard from "./NutrientCard"
+import { useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 
 
 function ProductInfoPage() {
 
-  const productName = 'Product name here';
-  const calories = '350';
+  const [imageURL, setImageURL] = useState('');
+
+  const searchParams = useSearchParams();
+  const name = searchParams.get('name');
+  const carbs = searchParams.get('carbs');
+  const kcal = searchParams.get('kcal');
+  const fat = searchParams.get('fat');
+  const protein = searchParams.get('protein');
+  const query = searchParams.get('search');
+
+  const getPhoto = async () => {
+    const response = await fetch("https://pixabay.com/api/?key=38344200-772a9e460d5d47b78706a3b2d&q=" + query + " mat&image_type=photo&pretty=true&lang=sv");
+    const imageData = await response.json();
+    console.log(imageData);
+    setImageURL(imageData.hits[4].webformatURL);
+  }
+
+  useEffect(() => {
+    getPhoto();
+  }, [])
 
   return (
 
-
     <div className="product-info">
-      <img className="product-info__image" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1480&q=80" alt="" />
-      <h1 className="product-info__title">{productName}</h1>
+      <img className="product-info__image" src={imageURL} alt="" />
+      <h1 className="product-info__title">{name}</h1>
       <section className="product-info__card-section">
         <article className="card product-info__energy-card">
-          <h3>Energy</h3>
-          <h2>{calories} Kcal</h2>
+          <h3>Energy per 100g</h3>
+          <h2>{kcal} Kcal</h2>
         </article>
-          <NutrientCard name={'Carbs'} color={'blueviolet'} percentage={20}/>
-          <NutrientCard name={'Fat'} color={'orange'} percentage={45}/>
-          <NutrientCard name={'Protein'} color={'red'} percentage={32}/>
+          <NutrientCard name={'Carbs'} color={'blueviolet'} percentage={carbs}/>
+          <NutrientCard name={'Fat'} color={'orange'} percentage={fat}/>
+          <NutrientCard name={'Protein'} color={'red'} percentage={protein}/>
       </section>
     </div>
   )

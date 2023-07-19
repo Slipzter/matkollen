@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import 'font-awesome/css/font-awesome.min.css'
 
-
 const SearchInput = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
