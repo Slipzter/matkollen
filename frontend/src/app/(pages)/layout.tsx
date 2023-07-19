@@ -21,12 +21,12 @@ export default function RootLayout({
 
   return (
       <>
-        <header>
-          <button className="nav-back" onClick={handleGoBack}>Back</button>
+        <header className='nav-header'>
+          <button className="nav-back nav-button" onClick={handleGoBack}><i className="fa fa-arrow-circle-left"></i></button>
           <nav>
-            <ul className="flex flex-row items-start gap-2 whitespace-nowrap">
-              <Link className="nav-landing" href="/landingpage">LOG IN</Link>
-              <Link className="nav-home" href="/home">HOME</Link>
+            <ul>
+              <Link className="nav-landing nav-button" href="/landingpage"><i className="fa fa-user-circle"></i></Link>
+              <Link className="nav-home nav-button" href="/home"><i className="fa fa-home"></i></Link>
             </ul>
           </nav>
         </header>

@@ -14,6 +14,14 @@ font-family:'Poppins', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+}
+
+.home__image {
+  height: 20vh;
+  width: 100%;
+  background: url('/food1.jpg');
+  background-size: cover;
 }
 
 header {
@@ -164,7 +172,7 @@ h1{
   width: 90%;
   padding: 20px 10px;
   margin: 20px; 
-  margin-top: 50%;
+  margin-top: 20%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -189,40 +197,42 @@ h1{
   width: 20%;
   padding: 20px 10px;
   margin: 20px; 
-  margin-top: 50%;
+  margin-top: 20%;
   margin-left: 0;
   cursor: pointer;
  }
 
- .nav-back {
+ .nav-button {
   padding: 10px 15px;
-  background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
+  border-radius: none;
   cursor: pointer;
-  font-size: 1.5vh;
   text-align: center;
   text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
+ }
 
+ .nav-header {
+  background-color: #333;
+ }
+
+ .nav-header i {
+  transform: scale(2);
+ }
+
+.nav-back {
+  background-color: #333;
+  transform: scale(1.3);
+}
 
 .nav-back:hover {
   background-color: #0056b3;
 }
 
 .nav-landing {
-  padding: 10px 15px;
-  background-color: #9ce885;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1.5vh;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  /* background-color: #9ce885; */
 }
 
 .nav-landing:hover {
@@ -230,17 +240,11 @@ h1{
 }
 
 .nav-home {
-  padding: 10px 15px;
-  background-color: #e8bd85;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
+  /* background-color: #e8bd85; */
   margin-left: 10px;
-  cursor: pointer;
-  font-size: 1.5vh;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #333;
+  background-color: white;
+  padding: 5px 10px;
 }
 
 .nav-home:hover {
