@@ -1,4 +1,4 @@
-import SearchInput from "@/app/SearchInput";
+import SearchInput from "@/app/component/SearchInput";
 import Link from "next/link";
 
 export default function Home() {

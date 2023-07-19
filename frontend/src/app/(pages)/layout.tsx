@@ -26,7 +26,7 @@ export default function RootLayout({
           <nav>
             <ul>
               <Link className="nav-landing nav-button" href="/landingpage"><i className="fa fa-user-circle"></i></Link>
-              <Link className="nav-home nav-button" href="/home"><i className="fa fa-home"></i></Link>
+              <Link className="nav-home nav-button" href="/home"><i className="fa fa-search"></i></Link>
             </ul>
           </nav>
         </header>
