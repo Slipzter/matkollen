@@ -40,9 +40,9 @@ function ProductInfoPage() {
           <h3>Energy per 100g</h3>
           <h2>{kcal} Kcal</h2>
         </article>
-          <NutrientCard name={'Carbs'} color={'blueviolet'} percentage={carbs}/>
-          <NutrientCard name={'Fat'} color={'orange'} percentage={fat}/>
-          <NutrientCard name={'Protein'} color={'red'} percentage={protein}/>
+          <NutrientCard name={'Carbs'} color={'blueviolet'} percentage={parseInt(carbs!)}/>
+          <NutrientCard name={'Fat'} color={'orange'} percentage={parseInt(fat!)}/>
+          <NutrientCard name={'Protein'} color={'red'} percentage={parseInt(protein!)}/>
       </section>
     </div>
   )
