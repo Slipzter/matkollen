@@ -1,6 +1,5 @@
 'use client'
 
-import { Product } from "@/types";
 import NutrientCard from "./NutrientCard"
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";

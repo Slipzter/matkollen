@@ -14,11 +14,10 @@ const landing = () => {
         <div className='logo'>
           <img className= 'logo-img' src="/logo.png" alt="" />
         </div>
-        <h1>MATKOLLEN</h1>
       <div className='footer'>
-      <button className='login' onClick={handleSearch}>
-        Login
-      </button>
+        <button className='login' onClick={handleSearch}>
+          Login
+        </button>
         <Link href={`/home`} className='continue-link'>Continue without registration</Link>
       </div>
       </div>
