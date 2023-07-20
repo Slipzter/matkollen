@@ -11,8 +11,10 @@ const landing = () => {
   return (
     <>
       <div className='landing'>
+      <img className= 'logo-img' src="/logo1.png" alt="" />
         <div className='logo'>
-          <img className= 'logo-img' src="/logo.png" alt="" />
+        {/* <img className= 'logo-img' src="/logo.png" alt="" /> */}
+        <h1>MATKOLLEN</h1>
         </div>
       <div className='footer'>
         <button className='login' onClick={handleSearch}>
