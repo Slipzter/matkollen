@@ -23,7 +23,7 @@ const SearchPage = () => {
 }, []);
     return (
     <>   
-        <div>
+        <div className="search-page">
          <img src="/food2.jpg" alt="food" className="search-img" /> 
         </div> 
             <div>
