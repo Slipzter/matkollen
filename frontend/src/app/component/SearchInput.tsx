@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import 'font-awesome/css/font-awesome.min.css'
+import 'fontawesome-4.7/css/font-awesome.min.css'
 
 const SearchInput = () => {
 

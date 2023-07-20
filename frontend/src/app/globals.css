@@ -87,19 +87,15 @@ header {
 }
 
 .logo-img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
+  width: 150px;
   margin:0;
-
-
 }
 
 h1{
   color:black;
   text-align: center;
   font-size: 46px;
-  margin-top: 170px;
+  margin-top: 200px;
 }
 
 .card{
@@ -140,7 +136,14 @@ h1{
 .product-info__image {
   margin-bottom: 1em;
   height: 250px;
-  width: 100%;
+}
+
+.product-info__image__container {
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
 }
 
 .product-info__title {
