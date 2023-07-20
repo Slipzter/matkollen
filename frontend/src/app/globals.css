@@ -38,8 +38,6 @@ header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  /* justify-content: flex-end; */
   padding: 20px;
 }
 
@@ -50,7 +48,6 @@ header {
   align-items: center;
   margin-bottom: 20px;
   justify-content: flex-end;
-  margin-top: 200px;
   
 }
 .login{
@@ -90,9 +87,12 @@ header {
 }
 
 .logo-img {
-  width: 350px;
-  height: auto;
-  border-radius: 12px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin:0;
+
+
 }
 
 h1{
@@ -138,10 +138,9 @@ h1{
 }
 
 .product-info__image {
-  width: 20em;
-  align-self: center;
-  border-radius: 0 0 8px 8px;
   margin-bottom: 1em;
+  height: 250px;
+  width: 100%;
 }
 
 .product-info__title {
@@ -221,7 +220,6 @@ h1{
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); */
  }
 
  .nav-header {
@@ -241,16 +239,11 @@ h1{
   background-color: #0056b3;
 }
 
-.nav-landing {
-  /* background-color: #9ce885; */
-}
-
 .nav-landing:hover {
   background-color: #4eca2c;
 }
 
 .nav-home {
-  /* background-color: #e8bd85; */
   margin-left: 10px;
   color: #333;
   background-color: white;

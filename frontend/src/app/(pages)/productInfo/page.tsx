@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 
 
+
 function ProductInfoPage() {
 
   const [imageURL, setImageURL] = useState('');
@@ -17,6 +18,7 @@ function ProductInfoPage() {
   const fat = searchParams.get('fat');
   const protein = searchParams.get('protein');
   const query = searchParams.get('search');
+
 
   const getPhoto = async () => {
     const response = await fetch("https://pixabay.com/api/?key=38344200-772a9e460d5d47b78706a3b2d&q=" + query + " mat&image_type=photo&pretty=true&lang=sv");
