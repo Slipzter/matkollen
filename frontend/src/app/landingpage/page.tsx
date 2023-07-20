@@ -11,7 +11,7 @@ const landing = () => {
   return (
     <>
       <div className='landing'>
-      <img className= 'logo-img' src="/logo1.png" alt="" />
+      <img className= 'logo-img' src="/bluetea-logo.png" alt="" />
         <div className='logo'>
         {/* <img className= 'logo-img' src="/logo.png" alt="" /> */}
         <h1>MATKOLLEN</h1>

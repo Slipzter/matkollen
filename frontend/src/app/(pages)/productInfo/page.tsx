@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 
 
 function ProductInfoPage() {
-
   const [imageURL, setImageURL] = useState('');
 
   const searchParams = useSearchParams();
@@ -17,24 +16,27 @@ function ProductInfoPage() {
   const kcal = searchParams.get('kcal');
   const fat = searchParams.get('fat');
   const protein = searchParams.get('protein');
-  const query = searchParams.get('search');
 
 
-  const getPhoto = async () => {
-    const response = await fetch("https://pixabay.com/api/?key=38344200-772a9e460d5d47b78706a3b2d&q=" + query + " mat&image_type=photo&pretty=true&lang=sv");
-    const imageData = await response.json();
-    console.log(imageData);
-    setImageURL(imageData.hits[4].webformatURL);
+  const getGooglePhoto = async () => {
+    const apiKey = process.env.NEXT_PUBLIC_API_KEY;
+    const searchEngineId = process.env.NEXT_PUBLIC_SE_ID;
+    const response = await fetch("https://www.googleapis.com/customsearch/v1?q=" + name + "&cx=" + searchEngineId + "&key=" + apiKey + "&gl=se&hl=sv&searchType=image");
+    const jsonData = await response.json();
+    console.log(jsonData);
+    setImageURL(jsonData.items[0].link);
   }
 
   useEffect(() => {
-    getPhoto();
+    getGooglePhoto();
   }, [])
 
   return (
 
     <div className="product-info">
-      <img className="product-info__image" src={imageURL} alt="" />
+      <div className="product-info__image__container">
+        <img className="product-info__image" src={imageURL} alt="" />
+      </div>
       <h1 className="product-info__title">{name}</h1>
       <section className="product-info__card-section">
         <article className="card product-info__energy-card">
