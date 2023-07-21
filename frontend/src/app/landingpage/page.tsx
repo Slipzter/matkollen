@@ -19,9 +19,9 @@ const landing = () => {
         </div>
 
       <div className='footer'>
-        <button className='login' onClick={handleSearch}>
+        <Link className='login' href= 'http://localhost:8080/'>
           Logga in
-        </button>
+        </Link>
         <Link href={`/home`} className='continue-link'>Fortsätt som gäst</Link>
       </div>
         </div>
