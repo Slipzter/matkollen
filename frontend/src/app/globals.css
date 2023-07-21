@@ -79,11 +79,12 @@ header {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s, box-shadow 0.3s;
   width: 80%;
-  font-size: 1.8em;
+  font-size: 1.6em;
+  text-align: center;
 }
 
 .login:hover {
-  background-color: #026802;
+  background-color: #ffaa00bc;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 .login,
@@ -283,4 +284,33 @@ header {
 
 nav {
   padding: 1vh;
+}
+.page_not_found {
+  height: 93.5vh;
+  background-image: url('/cat1.png');
+  background-color: #fff;
+  padding-top:80px;
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-size: 350px 350px;
+  background-position: center;
+  margin-top:0px;
+  color: red;
+  text-align: center;
+  font-size: 34px;
+}
+
+.not_found_error{
+text-align: center;
+border-radius: 40px;
+background-color: #ffaa00;
+border: none;
+margin-top: 350px
+
+}
+
+.not_found_error a{
+  color: blue;
+  font-size: 20px;
+  text-decoration: none;
 }

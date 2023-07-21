@@ -4,6 +4,7 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Product } from "@/types";
 import Card from "../../component/Card";
+import Link from "next/link";
 
 const SearchPage = () => {
     const search = useSearchParams();
@@ -21,6 +22,20 @@ const SearchPage = () => {
     getProducts();
 
 }, []);
+
+if (products === null || {} ){
+   return (
+    
+    <div className="page_not_found">
+        <h1>404</h1>
+        <h3>Product not found</h3>
+   <div className="not_found_error card">
+    <Link href="/home"><p>Search again..</p></Link>
+   </div>
+   </div>
+   )  
+}
+else {
     return (
     <>   
         <div className="search-page">
@@ -34,9 +49,10 @@ const SearchPage = () => {
                     </div>
                 )
             })}
-            </div>
+            </div> 
         </>
         )
+    }
 }
 
 export default SearchPage;
