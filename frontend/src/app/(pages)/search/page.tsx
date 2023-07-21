@@ -6,36 +6,44 @@ import { Product } from "@/types";
 import Card from "../../component/Card";
 import Link from "next/link";
 
-const SearchPage = () => {
+function SearchPage() {
     const search = useSearchParams();
     const searchQuery = search ? search.get('q') : null;
     const encodedSearchQuery = encodeURI(searchQuery || "");
-    const [products, setProducts] = useState([]);
+    const [products, setProducts] = useState(null);
+    const [isLoading, setLoading] = useState(false);
 
-    useEffect(()=>{
-    async function getProducts() {
-    const response = await fetch("http://localhost:8080/search/" + encodedSearchQuery);
-    const products = await response.json();
-    setProducts(products);
-    console.log(products);
-    }
-    getProducts();
+    useEffect(() => {
+        setLoading(true)
+        fetch("http://localhost:8080/search/" + encodedSearchQuery)
+        .then((res) => {
+            if (!res.ok) {
+                throw new Error("Product not found");
+            }
+            return res.json();
+        })
+        .then((data) => {
+            setProducts(data);
+            setLoading(false);
+    })
+    .catch((error) => {
+        console.error("Error fetching data:", error);
+        setProducts([]);
+        setLoading(false);
+    });
+}, [])
 
-}, []);
+    if (isLoading) return <p>Loading..</p>
+    if (!products || products.length === 0) return (
 
-if (products === null || {} ){
-   return (
-    
-    <div className="page_not_found">
-        <h1>404</h1>
-        <h3>Product not found</h3>
-   <div className="not_found_error card">
-    <Link href="/home"><p>Search again..</p></Link>
-   </div>
-   </div>
-   )  
-}
-else {
+            <div className="page_not_found">
+                    <h1>404</h1>
+                    <h3>Product not found</h3>
+                <div className="not_found_error card">
+                    <Link href="/home"><p>Search again..</p></Link>
+                </div>
+            </div>
+      )
     return (
     <>   
         <div className="search-page">
@@ -53,6 +61,5 @@ else {
         </>
         )
     }
-}
 
 export default SearchPage;
