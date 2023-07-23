@@ -10,7 +10,7 @@ function SearchPage() {
     const search = useSearchParams();
     const searchQuery = search ? search.get('q') : null;
     const encodedSearchQuery = encodeURI(searchQuery || "");
-    const [products, setProducts] = useState(null);
+    const [products, setProducts] = useState([]);
     const [isLoading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -38,9 +38,9 @@ function SearchPage() {
 
             <div className="page_not_found">
                     <h1>404</h1>
-                    <h3>Product not found</h3>
+                    <h3>Produkt hittades inte</h3>
                 <div className="not_found_error card">
-                    <Link href="/home"><p>Search again..</p></Link>
+                    <Link href="/home"><p>Sök igen..</p></Link>
                 </div>
             </div>
       )
