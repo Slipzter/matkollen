@@ -1,11 +1,11 @@
 
 export type Product =  {
-    energi_kcal  : number,
-    fett_totalt_g : number ,
-    kolhydrater_g : number,
-    livsmedelsnamn  : string,
-    protein_g : number,
-    searchQuery: string
+    energi_kcal: number,
+    fett_totalt_g: number,
+    kolhydrater_g: number,
+    livsmedelsnamn: string,
+    protein_g: number,
+    searchQuery?: string,
 }
 
 export type Nutrient = {
@@ -45,7 +45,9 @@ export type Livsmedel = {
     linolensyra_g: string,
     linolsyra_g: string,
     livsmedelsnamn: string,
-    livsmedelsnummer: string,
+    
+    livsmedelsnummer?: string,
+    
     magnesium_mg: string,
     monosackarider_g: string,
     myristinsyra_g: string,

@@ -10,7 +10,7 @@ export default function Home() {
     <main className="home">
       <div className="home__image"></div>
       <h2>Welcome User {}</h2>
-      <a href="/user/userProfile" className="prefences"> Set your preferences </a>
+      <a href="/user/userProfile" className="prefences"> Set your prefences </a>
         <UserSearchInput />
     </main>
     </>

@@ -53,7 +53,7 @@ function SearchPage() {
             {products.map((product: Product, index: number)=>{
                 return (
                     <div className="search-card-container" key={index}>
-                        <GuestCard searchQuery={encodedSearchQuery} livsmedelsnamn={product.livsmedelsnamn} energi_kcal={product.energi_kcal} fett_totalt_g={product.fett_totalt_g} kolhydrater_g={product.kolhydrater_g} protein_g={product.protein_g}/>
+                        <GuestCard name={product.livsmedelsnamn}/>
                     </div>
                 )
             })}
