@@ -14,7 +14,6 @@ const landing = () => {
       <div className='landing-background'>
       <img className= 'logo-img' src="/bluetea-logo.png" alt="" />
         <div className='logo'>
-        {/* <img className= 'logo-img' src="/logo.png" alt="" /> */}
         <h1 className='app-title'>MATKOLLEN</h1>
         </div>
 
