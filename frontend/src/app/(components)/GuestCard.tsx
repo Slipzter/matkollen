@@ -7,14 +7,9 @@ const GuestCard = (props : Product) => {
     <>
         <Link
         href={{
-          pathname: '/guest/productInfo/' + props.livsmedelsnamn,
+          pathname: '/guest/productInfo',
           query: {
             name: props.livsmedelsnamn,
-            carbs: props.kolhydrater_g,
-            fat: props.fett_totalt_g,
-            protein: props.protein_g,
-            kcal: props.energi_kcal,
-            search: props.searchQuery
           }
         }}
         passHref
