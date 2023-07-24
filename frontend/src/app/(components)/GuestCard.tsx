@@ -7,7 +7,7 @@ const GuestCard = (props : Product) => {
     <>
         <Link
         href={{
-          pathname: '/guest/productInfo',
+          pathname: '/guest/productInfo/' + props.livsmedelsnamn,
           query: {
             name: props.livsmedelsnamn,
             carbs: props.kolhydrater_g,
