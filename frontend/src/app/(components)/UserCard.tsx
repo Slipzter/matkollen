@@ -2,7 +2,7 @@ import React from 'react'
 import { Product } from "@/types";
 import Link from 'next/link';
 
-const GuestCard = (props : Product) => {
+const UserCard = (props : Product) => {
   return (
     <>
         <Link
@@ -29,4 +29,4 @@ const GuestCard = (props : Product) => {
     )
 }
 
-export default GuestCard
+export default UserCard

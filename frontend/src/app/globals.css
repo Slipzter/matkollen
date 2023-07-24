@@ -339,6 +339,11 @@ margin-top: 450px
 
 }
 
+a{
+  color:#ffaa00;
+  font-weight: 600;
+}
+
 /* ----FOR DESKTOP VERSION ---- */
 
 @media screen and (min-width: 769px) {
