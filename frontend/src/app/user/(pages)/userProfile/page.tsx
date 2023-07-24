@@ -9,7 +9,7 @@ function UserProfile(){
 
   
     useEffect(()=> {
-        const storedOptions = JSON.parse(localStorage.getItem("selectedOptions")) as string[] | null;
+        const storedOptions = JSON.parse(localStorage.getItem("selectedOptions") as string) as string[];
         if(storedOptions){
             setSelectedOptions(storedOptions)
         }
@@ -21,7 +21,7 @@ function UserProfile(){
 
     const handleOptionChange = (e: any) =>{
         setCurrentOption(e.target.value)
-        console.log("Added",e.target.value )
+        console.log("Added", e.target.value )
     }
 
     const handleAddOption = ()=>{
@@ -48,7 +48,7 @@ function UserProfile(){
             <option value="kalcium">Kalcium</option>
             <option value="iron">Iron</option>
         </select>
-        <button className="add" id = "addButton" onClick = {handleAddOption}>Lägg till</button>
+            <button className="add" id = "addButton" onClick = {handleAddOption}>Lägg till</button>
         </div>
     </>
     )

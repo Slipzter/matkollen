@@ -3,8 +3,9 @@
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Product } from "@/types";
-import Card from "../../component/Card";
+
 import Link from "next/link";
+import UserCard from "@/app/(components)/UserCard";
 
 function SearchPage() {
     const search = useSearchParams();
@@ -15,7 +16,7 @@ function SearchPage() {
 
     useEffect(() => {
         setLoading(true)
-        fetch("http://localhost:8080/search/" + encodedSearchQuery)
+        fetch("http://localhost:8080/user/search/" + encodedSearchQuery)
         .then((res) => {
             if (!res.ok) {
                 throw new Error("Product not found");
@@ -23,6 +24,7 @@ function SearchPage() {
             return res.json();
         })
         .then((data) => {
+            console.log('DATA HERE: ', data);
             setProducts(data);
             setLoading(false);
     })
@@ -38,14 +40,14 @@ function SearchPage() {
 
             <div className="page_not_found">
                     <h1>404</h1>
-                    <h3>Produkt hittades inte</h3>
-                <div className="not_found_error card">
-                    <Link href="/home"><p>Sök igen..</p></Link>
+                    <h3>Produkten hittades inte</h3>
+                        <div className="not_found_error card">
+                    <Link href="/home"><p>Sök igen...</p></Link>
                 </div>
             </div>
-    )
+      )
     return (
-    <>   
+    <>  
         <div className="search-page">
          <img src="/food2.jpg" alt="food" className="search-img" /> 
         </div> 
@@ -53,7 +55,7 @@ function SearchPage() {
             {products.map((product: Product, index: number)=>{
                 return (
                     <div className="search-card-container" key={index}>
-                        <Card searchQuery={encodedSearchQuery} livsmedelsnamn={product.livsmedelsnamn} energi_kcal={product.energi_kcal} fett_totalt_g={product.fett_totalt_g} kolhydrater_g={product.kolhydrater_g} protein_g={product.protein_g}/>
+                        <UserCard searchQuery={encodedSearchQuery} livsmedelsnamn={product.livsmedelsnamn} energi_kcal={product.energi_kcal} fett_totalt_g={product.fett_totalt_g} kolhydrater_g={product.kolhydrater_g} protein_g={product.protein_g}/>
                     </div>
                 )
             })}

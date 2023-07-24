@@ -311,12 +311,6 @@ margin-top: 450px
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background-image: url("/fruit1.jpg");
-  background-size:cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  width:100vw;
-  height: 30vh; */
 }
 .select-options{
   display:flex;
@@ -324,8 +318,6 @@ margin-top: 450px
   align-items: center;
   gap:30px;
   margin-top: 25px;
-
-  
 }
 .options{
   padding:10px 40px;
@@ -345,6 +337,11 @@ margin-top: 450px
  margin-top:40px;
  margin-left:-100px;
 
+}
+
+a{
+  color:#ffaa00;
+  font-weight: 600;
 }
 
 /* ----FOR DESKTOP VERSION ---- */

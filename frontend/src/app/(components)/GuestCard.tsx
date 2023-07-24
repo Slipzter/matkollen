@@ -2,12 +2,12 @@ import React from 'react'
 import { Product } from "@/types";
 import Link from 'next/link';
 
-const Card = (props : Product) => {
+const GuestCard = (props : Product) => {
   return (
     <>
         <Link
         href={{
-          pathname: '/productInfo',
+          pathname: '/guest/productInfo/' + props.livsmedelsnamn,
           query: {
             name: props.livsmedelsnamn,
             carbs: props.kolhydrater_g,
@@ -29,4 +29,4 @@ const Card = (props : Product) => {
     )
 }
 
-export default Card
+export default GuestCard
