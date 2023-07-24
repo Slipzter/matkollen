@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Product } from "@/types";
+import { Livsmedel } from "@/types";
 
 import Link from "next/link";
 import UserCard from "@/app/(components)/UserCard";
@@ -52,10 +52,10 @@ function SearchPage() {
          <img src="/food2.jpg" alt="food" className="search-img" /> 
         </div> 
             <div>
-            {products.map((product: Product, index: number)=>{
+            {products.map((product: Livsmedel, index: number)=>{
                 return (
                     <div className="search-card-container" key={index}>
-                        <UserCard searchQuery={encodedSearchQuery} livsmedelsnamn={product.livsmedelsnamn} energi_kcal={product.energi_kcal} fett_totalt_g={product.fett_totalt_g} kolhydrater_g={product.kolhydrater_g} protein_g={product.protein_g}/>
+                        <UserCard name={product.livsmedelsnamn} livsmedel={product} />
                     </div>
                 )
             })}

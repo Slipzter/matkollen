@@ -2,31 +2,30 @@ import React from 'react'
 import { Product } from "@/types";
 import Link from 'next/link';
 
-const UserCard = (props : Product) => {
+type UserCard = {
+  name: string,
+  livsmedel: object,
+}
+
+const UserCard = (props : UserCard) => {
   return (
     <>
-        <Link
-        href={{
-          pathname: '/user/productInfo',
-          query: {
-            name: props.livsmedelsnamn,
-            carbs: props.kolhydrater_g,
-            fat: props.fett_totalt_g,
-            protein: props.protein_g,
-            kcal: props.energi_kcal,
-            search: props.searchQuery
-          }
-        }}
-        passHref
-        className ='card-product-link'
-        >
-          <div className='card'>
-            {props.livsmedelsnamn}
-          </div>
-          </Link>
-      </>
-
-    )
+      <Link
+      href={{
+        pathname: '/user/productInfo',
+        query: {
+          name: props.name,
+        }
+      }}
+      passHref
+      className ='card-product-link'
+      >
+        <div className='card'>
+          {props.name}
+        </div>
+        </Link>
+    </>
+  )
 }
 
 export default UserCard
