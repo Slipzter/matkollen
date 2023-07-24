@@ -1,4 +1,5 @@
-import SearchInput from "@/app/(components)/SearchInput";
+
+import UserSearchInput from "@/app/(components)/UserSearchInput";
 import Link from "next/link";
 
 export default function Home() {
@@ -6,7 +7,7 @@ export default function Home() {
     <>
     <main className="home">
       <div className="home__image"></div>
-        <SearchInput />
+        <UserSearchInput />
     </main>
     </>
     )

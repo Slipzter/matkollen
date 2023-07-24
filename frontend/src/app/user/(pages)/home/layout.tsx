@@ -1,6 +1,6 @@
 "use client"
 
-import '../../globals.css';
+import '../../../globals.css';
 import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
