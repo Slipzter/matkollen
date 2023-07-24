@@ -308,6 +308,26 @@ margin-top: 450px
   flex-direction: column;
   align-items: center;
 }
+.select-options{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:30px;
+  margin-top: 25px
+  
+}
+.options{
+  padding:10px 40px;
+  justify-content: center;
+  height:40px;
+}
+
+.add{
+  height:40px;
+  padding:10px 20px;
+}
+
+/* ----FOR DESKTOP VERSION ---- */
 
 @media screen and (min-width: 769px) {
 
