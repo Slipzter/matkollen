@@ -6,12 +6,12 @@ function UserProfile(){
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [currentOption, setCurrentOption] = useState<string>("");
 
+  
     useEffect(()=> {
-        const storedOptions = JSON.parse(localStorage.getItem("selectedOptions"));
+        const storedOptions = JSON.parse(localStorage.getItem("selectedOptions")) as string[] | null;
         if(storedOptions){
             setSelectedOptions(storedOptions)
         }
-
     }, []);
 
     useEffect(()=>{

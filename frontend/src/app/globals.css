@@ -325,6 +325,8 @@ margin-top: 450px
 .add{
   height:40px;
   padding:10px 20px;
+  background-color: #ffaa00;
+  border:none;
 }
 
 /* ----FOR DESKTOP VERSION ---- */
