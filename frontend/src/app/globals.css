@@ -303,6 +303,12 @@ margin-top: 450px
   text-decoration: none;
 }
 
+.user-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 @media screen and (min-width: 769px) {
 
   body {
@@ -328,9 +334,7 @@ margin-top: 450px
     color: black
   }
   .search-form button {
-    width: 24%;
-    padding: 20px 10px;
-    margin: 10% 0 20px 0;
+    width: 10%;
   }
   .home__image {
     height: 60vh;
