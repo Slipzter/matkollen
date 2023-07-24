@@ -1,10 +1,11 @@
 'use client'
-import SearchInput from "@/app/component/SearchInput";
 import { useEffect, useState } from "react";
+
 
 function UserProfile(){
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [currentOption, setCurrentOption] = useState<string>("");
+   
 
   
     useEffect(()=> {
@@ -33,9 +34,9 @@ function UserProfile(){
     return(
         <>
         <div className="user-container">
-        <SearchInput />
-         <h4>Välkommen till Matkollen {} !</h4>
-        </div> 
+         <h2 className="welcome-page">Välkommen till Matkollen {} !</h2>
+         <label htmlFor="nutrients" className="label">Välj nedan och lägg till:</label> 
+        </div>
         <div className="select-options">
         <select name="preferences" className="options" value={currentOption} onChange={handleOptionChange} >
             <option value="">Välj</option>
@@ -54,3 +55,4 @@ function UserProfile(){
 }
 
 export default UserProfile;
+
