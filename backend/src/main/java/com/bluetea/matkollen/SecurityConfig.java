@@ -32,6 +32,8 @@ public class SecurityConfig {
                 auth
                         .requestMatchers("/").permitAll()
                         .requestMatchers("/home").authenticated()
+                        .requestMatchers("/search/**").permitAll()
+                        .requestMatchers("/search").permitAll()
         )          .oauth2Login(login -> login.successHandler(handler))
                 .cors(withDefaults())
 //                .oauth2ResourceServer(it -> it.jwt(withDefaults()))

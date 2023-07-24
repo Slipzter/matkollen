@@ -43,7 +43,7 @@ function SearchPage() {
                     <Link href="/home"><p>Sök igen..</p></Link>
                 </div>
             </div>
-      )
+    )
     return (
     <>   
         <div className="search-page">
