@@ -32,6 +32,15 @@ public class ProductService {
         return list;
     }
 
+    public List<livsmedel> getAllProductsByName(String name) {
+        String formatted = name.replace("%20", " ");
+        List<livsmedel> list = repo.getAllByName(formatted);
+        if (list.size() == 0) {
+            return null;
+        }
+        return list;
+    }
+
     private ProductGuestDTO convertToProductGuestDTO (livsmedel product) {
         return new ProductGuestDTO(
                 product.getLivsmedelsnamn(),

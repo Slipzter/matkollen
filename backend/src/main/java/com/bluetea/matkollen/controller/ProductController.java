@@ -7,6 +7,8 @@ import com.bluetea.matkollen.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -23,8 +25,13 @@ public class ProductController {
         this.service = service;
     }
 
-    @GetMapping(value = "/search/{productName}")
-    public ResponseEntity<List<ProductGuestDTO>> searchProductByName(@PathVariable String productName) {
+
+    //add guest url
+    @GetMapping(value = "/guest/search/{productName}")
+    public ResponseEntity<List<ProductGuestDTO>> searchProductByName(@AuthenticationPrincipal OidcUser oidcUser, @PathVariable String productName) {
+        if (oidcUser != null) {
+            System.out.println("GET request by: " + oidcUser.getUserInfo().getFullName());
+        }
         List<ProductGuestDTO> productGuestDTO = service.getAllByName(productName);
         if (productGuestDTO != null) {
             return ResponseEntity.ok(productGuestDTO);
@@ -32,14 +39,16 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
 
-//    @GetMapping("/search/{productId}")
-//    public ResponseEntity<ProductGuestDTO> searchProductById(@PathVariable String productId) {
-//        ProductGuestDTO productGuestDTO = productRepository.getById(productId);
-//        if (productGuestDTO != null) {
-//            return ResponseEntity.ok(productGuestDTO);
-//        } else {
-//            return ResponseEntity.notFound().build();
-//        }
-//    }
+    @GetMapping(value = "/user/search/{productName}")
+    public ResponseEntity<List<livsmedel>> searchFullProductByName(@AuthenticationPrincipal OidcUser oidcUser, @PathVariable String productName) {
+        if (oidcUser != null) {
+            System.out.println("GET request by: " + oidcUser.getUserInfo().getFullName());
+        }
+        List<livsmedel> livsmedelList = service.getAllProductsByName(productName);
+        if (livsmedelList != null) {
+            return ResponseEntity.ok(livsmedelList);
+        }
+        return ResponseEntity.notFound().build();
+    }
 
 }
