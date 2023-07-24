@@ -17,7 +17,7 @@ const landing = () => {
         <Link className='login' href= 'http://localhost:8080/'>
           Logga in
         </Link>
-        <Link href={`/home`} className='continue-link'>Fortsätt som gäst</Link>
+        <Link href={`/guest/home`} className='continue-link'>Fortsätt som gäst</Link>
       </div>
         </div>
       </div>

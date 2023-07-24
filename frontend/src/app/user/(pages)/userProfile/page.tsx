@@ -9,7 +9,7 @@ function UserProfile(){
 
   
     useEffect(()=> {
-        const storedOptions = JSON.parse(localStorage.getItem("selectedOptions")) as string[] | null;
+        const storedOptions = JSON.parse(localStorage.getItem("selectedOptions")) as string[];
         if(storedOptions){
             setSelectedOptions(storedOptions)
         }

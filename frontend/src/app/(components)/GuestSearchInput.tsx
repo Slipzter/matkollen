@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import 'fontawesome-4.7/css/font-awesome.min.css'
 
-const SearchInput = () => {
+const GuestSearchInput = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
     const router = useRouter();
@@ -13,7 +13,7 @@ const SearchInput = () => {
         event.preventDefault();
 
         const encodedSearchQuery = encodeURI(searchQuery);
-        router.push(`/search?q=${encodedSearchQuery}`);
+        router.push(`/guest/search?q=${encodedSearchQuery}`);
     };
 
     return (
@@ -30,4 +30,4 @@ const SearchInput = () => {
     )
 };
 
-export default SearchInput;
+export default GuestSearchInput;
