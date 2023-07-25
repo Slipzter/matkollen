@@ -42,7 +42,7 @@ function SearchPage() {
                     <h1>404</h1>
                     <h3>Produkten hittades inte</h3>
                         <div className="not_found_error card">
-                    <Link href="/home"><p>Sök igen...</p></Link>
+                    <Link href="/user/home"><p>Sök igen...</p></Link>
                 </div>
             </div>
       )
