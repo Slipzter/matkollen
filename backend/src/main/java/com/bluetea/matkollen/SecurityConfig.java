@@ -36,16 +36,22 @@ public class SecurityConfig {
 
     @Bean
     DefaultSecurityFilterChain defaultChain(HttpSecurity http) throws Exception {
-        return http.authorizeHttpRequests(auth ->
-                auth
+        return http
+                .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/**").permitAll()
 //                        .requestMatchers("/","/search", "/guest", "/guest/**").permitAll()
 //                        .requestMatchers( "/user/**").authenticated()
                 )
                 .oauth2Login(login -> login.successHandler(handler))
                 .cors(withDefaults())
-//                .oauth2ResourceServer(it -> it.jwt(withDefaults()))
                 .csrf().disable()
+//                .oauth2ResourceServer(it -> it.jwt(withDefaults()))
+                .logout((logout) ->
+                        logout.deleteCookies("userId")
+                                .invalidateHttpSession(true)
+                                .logoutUrl("/user/logout")
+                                .logoutSuccessUrl("http://localhost:3000")
+                )
                 .build();
     }
 }
