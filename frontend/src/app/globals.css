@@ -344,6 +344,20 @@ a{
   font-weight: 600;
 }
 
+.welcome-title{
+  color:#fb0;
+  letter-spacing: 3px;
+  padding: 25px 0px;
+  text-transform: uppercase;
+  font-size: 2em;
+  text-align: center;
+}
+span{
+  color: #000;
+  font-size: 0.5em;
+  margin: 15px 20px;
+}
+
 /* ----FOR DESKTOP VERSION ---- */
 
 @media screen and (min-width: 769px) {

@@ -17,7 +17,7 @@ async function Home() {
     <>
     <main className="home">
       <div className="home__image"></div>
-      <h2>Welcome {name}</h2>
+      <h2 className='welcome-title'>Welcome <br /><span >{name}</span></h2>
       <a href="/user/userProfile" className="prefences"> Set your prefences </a>
         <UserSearchInput />
     </main>
