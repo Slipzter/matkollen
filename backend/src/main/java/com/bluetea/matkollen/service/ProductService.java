@@ -18,9 +18,16 @@ public class ProductService {
         this.repo = repo;
     }
 
-    public ProductGuestDTO getByName(String name) {
-        livsmedel product = repo.getByName(name);
+    public ProductGuestDTO getProductByName(String name) {
+        String formatted = name.replace("%20", " ");
+        livsmedel product = repo.getByName(formatted);
         return convertToProductGuestDTO(product);
+    }
+
+    public livsmedel getFullProductByName(String name) {
+        String formatted = name.replace("%20", " ");
+        livsmedel product = repo.getByName(formatted);
+        return product;
     }
 
     public List<ProductGuestDTO> getAllByName(String name) {

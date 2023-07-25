@@ -25,28 +25,44 @@ public class ProductController {
         this.service = service;
     }
 
-
-    //add guest url
-    @GetMapping(value = "/guest/search/{productName}")
-    public ResponseEntity<List<ProductGuestDTO>> searchProductByName(@AuthenticationPrincipal OidcUser oidcUser, @PathVariable String productName) {
+    @GetMapping(value = "/guest/search/{searchQuery}")
+    public ResponseEntity<List<ProductGuestDTO>> searchProductByName(@AuthenticationPrincipal OidcUser oidcUser, @PathVariable String searchQuery) {
         if (oidcUser != null) {
             System.out.println("GET request by: " + oidcUser.getUserInfo().getFullName());
         }
-        List<ProductGuestDTO> productGuestDTO = service.getAllByName(productName);
+        List<ProductGuestDTO> productGuestDTO = service.getAllByName(searchQuery);
         if (productGuestDTO != null) {
             return ResponseEntity.ok(productGuestDTO);
         }
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping(value = "/user/search/{productName}")
-    public ResponseEntity<List<livsmedel>> searchFullProductByName(@AuthenticationPrincipal OidcUser oidcUser, @PathVariable String productName) {
+    @GetMapping(value = "/guest/product/{productName}")
+    public ResponseEntity<ProductGuestDTO> getProductByName(@PathVariable String productName) {
+        ProductGuestDTO product = service.getProductByName(productName);
+        if (product != null) {
+            return ResponseEntity.ok(product);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping(value = "/user/search/{searchQuery}")
+    public ResponseEntity<List<livsmedel>> searchFullProductByName(@AuthenticationPrincipal OidcUser oidcUser, @PathVariable String searchQuery) {
         if (oidcUser != null) {
             System.out.println("GET request by: " + oidcUser.getUserInfo().getFullName());
         }
-        List<livsmedel> livsmedelList = service.getAllProductsByName(productName);
+        List<livsmedel> livsmedelList = service.getAllProductsByName(searchQuery);
         if (livsmedelList != null) {
             return ResponseEntity.ok(livsmedelList);
+        }
+        return ResponseEntity.notFound().build();
+    }
+
+    @GetMapping(value = "/user/product/{productName}")
+    public ResponseEntity<livsmedel> getFullProductById(@PathVariable String productName) {
+        livsmedel product = service.getFullProductByName(productName);
+        if (product != null) {
+            return ResponseEntity.ok(product);
         }
         return ResponseEntity.notFound().build();
     }
