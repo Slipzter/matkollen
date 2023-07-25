@@ -18,6 +18,7 @@ export default function RootLayout({
     router.back();
   };
 
+
   return (
       <>
         <header className='nav-header'>
@@ -26,6 +27,7 @@ export default function RootLayout({
             <ul>
               <Link className="nav-home nav-button" href="/user/home"><i className="fa fa-search"></i></Link>
               <Link className="nav-landing nav-button" href="/user/userProfile"><i className="fa fa-user-circle"></i></Link>
+              <Link className="nav-logout nav-button" href="http://localhost:8080/user/logout">Log out</Link>
             </ul>
           </nav>
         </header>
