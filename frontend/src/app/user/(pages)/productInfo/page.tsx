@@ -56,7 +56,7 @@ function ProductInfoPage() {
     }
   }, [])
 
-  console.log('varStore 1', selectedOptionsLocalStorage);
+  console.log('Stored options', selectedOptionsLocalStorage);
 
 
   return (
@@ -74,24 +74,24 @@ function ProductInfoPage() {
           <NutrientCard name={'Kålhydrater'} color={'blueviolet'} percentage={1}/>
           <NutrientCard name={'Fett'} color={'orange'} percentage={1}/>
           <NutrientCard name={'Protein'} color={'red'} percentage={1}/>
-       {
+       {/* {
           productData.map((entry: string[]) => {
             return <p>{entry[0]}: {entry[1]}</p>
-          })}
+          })} */}
       </section>
       <div>
           <h3>Selected Options from Local Storage: </h3>
           <ul>
-          {selectedOptionsLocalStorage.map((option) => (  
-            <li key={option.key}>
-              Key: {option.key}, Value: {option.value}
+          {selectedOptionsLocalStorage.map((option, index) => (  
+            <li key={index}>
+             {option}
             </li>
           ))}
           </ul>
-
         </div>
+        
     </div>
   )
 }
 
-export default ProductInfoPage
+export default ProductInfoPage 

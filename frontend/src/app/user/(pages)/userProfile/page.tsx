@@ -40,7 +40,7 @@ function UserProfile(){
             <option value="">Välj</option>
             <option value="fiber">Fiber</option>
             <option value="vatten">Vatten</option>
-            <option value="alcohol">Alcohol</option>
+            <option value="alkohol_g">Alcohol</option>
             <option value="aska">Aska</option>
             <option value="sockerarter">Sockerarter</option>
             <option value="kalcium">Kalcium</option>
