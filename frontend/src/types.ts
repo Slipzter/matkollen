@@ -46,9 +46,8 @@ export type Livsmedel = {
     laurinsyra_g: string,
     linolensyra_g: string,
     linolsyra_g: string,
-    
-    livsmedelsnamn: string,
-    
+    [livsmedelsnamn: string]: any,
+
     livsmedelsnummer?: string,
     
     magnesium_mg: string,

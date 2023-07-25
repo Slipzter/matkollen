@@ -15,7 +15,9 @@ function UserProfile(){
     }, []);
 
     useEffect(()=>{
-       localStorage.setItem("arrayOfItems", JSON.stringify(selectedItems))
+        if(Object.keys(selectedItems).length > 0){
+        localStorage.setItem("arrayOfItems", JSON.stringify(selectedItems))
+   }
     }, [selectedItems]);
 
     const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) =>{
@@ -42,7 +44,7 @@ function UserProfile(){
         </div>
         <div className="select-options">
         <select id="dropdown" name="preferences" className="options" value={currentItem?.value} onChange={handleOptionChange} >
-            <option value="">Välj</option>
+            <option>Välj</option>
             <option value="alkohol_g">Alkohol (g)</option>
             <option value="arakidinsyra_g">Arakidinsyra (g)</option>
             <option value="arakidonsyra_g">Arakidonsyra (g)</option>
