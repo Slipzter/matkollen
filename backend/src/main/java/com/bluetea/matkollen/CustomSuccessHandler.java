@@ -3,6 +3,7 @@ package com.bluetea.matkollen;
 import com.bluetea.matkollen.model.foodUser;
 import com.bluetea.matkollen.service.UserService;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,9 +30,17 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
         foodUser currentUser = new foodUser(user.getName(), user.getFullName(), user.getEmail());
         service.createUser(currentUser);
 
+        Cookie tokenCookie = new Cookie("userId", user.getName());
+        tokenCookie.setMaxAge(60);
+        tokenCookie.setPath("/");
+        tokenCookie.setHttpOnly(false);
+        tokenCookie.setSecure(true);
+        response.addCookie(tokenCookie);
+
         System.out.println("Id: " + user.getName() + "\n");
         System.out.println("Email: " + user.getEmail() + "\n");
         System.out.println("Full name: " + user.getFullName() + "\n");
+        System.out.println(tokenCookie.getName());
 
         response.sendRedirect("http://localhost:3000/user/home");
     }
