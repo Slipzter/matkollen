@@ -2,6 +2,7 @@
 
 
 import UserSearchInput from "@/app/(components)/UserSearchInput";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -10,7 +11,7 @@ export default function Home() {
     <main className="home">
       <div className="home__image"></div>
       <h2>Welcome User {}</h2>
-      <a href="/user/userProfile" className="prefences"> Set your prefences </a>
+      <Link href="/user/userProfile" className="prefences"> Set your prefences </Link>
         <UserSearchInput />
     </main>
     </>
