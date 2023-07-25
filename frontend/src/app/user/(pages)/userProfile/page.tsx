@@ -15,7 +15,9 @@ function UserProfile(){
     }, []);
 
     useEffect(()=>{
-       localStorage.setItem("arrayOfItems", JSON.stringify(selectedItems))
+        if(Object.keys(selectedItems).length > 0){
+        localStorage.setItem("arrayOfItems", JSON.stringify(selectedItems))
+   }
     }, [selectedItems]);
 
     const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) =>{
@@ -42,7 +44,7 @@ function UserProfile(){
         </div>
         <div className="select-options">
         <select id="dropdown" name="preferences" className="options" value={currentItem?.value} onChange={handleOptionChange} >
-            <option value="">Välj</option>
+            <option>Välj</option>
             <option value="alkohol_g">Alkohol (g)</option>
             <option value="arakidinsyra_g">Arakidinsyra (g)</option>
             <option value="arakidonsyra_g">Arakidonsyra (g)</option>
@@ -52,10 +54,8 @@ function UserProfile(){
             <option value="dha_g">DHA (g)</option>
             <option value="disackarider_g">Disackarider (g)</option>
             <option value="dpa_g">DPA (g)</option>
-            <option value="energi_kcal">Energi (Kcal)</option>
             <option value="energi_kj">Energi (Kj)</option>
             <option value="epa_g">EPA (g)</option>
-            <option value="fett_totalt_g">Fett Totalt (g)</option>
             <option value="fettsyra_g">Fettsyra (g)</option>
             <option value="fibrer_g">Fibrer (g)</option>
             <option value="folat">Folat (μg)</option>
@@ -67,7 +67,6 @@ function UserProfile(){
             <option value="kalcium_mg">Kalcium (mg)</option>
             <option value="kalium_mg">Kalium (mg)</option>
             <option value="kolesterol_mg">Kolesterol (mg)</option>
-            <option value="kolhydrater_g">Kolhydrater (g)</option>
             <option value="laurinsyra_g">Laurinsyra (g)</option>
             <option value="linolensyra_g">Linolensyra (g)</option>
             <option value="linolsyra_g">Linolsyra (g)</option>
@@ -80,7 +79,6 @@ function UserProfile(){
             <option value="oljesyra_g">Oljesyra (g)</option>
             <option value="palmitinsyra_g">Palmitinsyra (g)</option>
             <option value="palmitoljesyra_g">Palmitoljesyra (g)</option>
-            <option value="protein_g">Protein (g)</option>
             <option value="retinol">Retinol (μg)</option>
             <option value="riboflavin_mg">Riboflavin (mg)</option>
             <option value="salt_g">Salt (g)</option>

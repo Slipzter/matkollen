@@ -1,31 +1,40 @@
 'use client'
 
+import { Livsmedel } from "@/types";
 import NutrientCard from "./NutrientCard"
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
 
 
-
 function ProductInfoPage() {
   const [imageURL, setImageURL] = useState('');
-  const [productData, setProductData] = useState<any>([]);
+  const [productData, setProductData] = useState<Livsmedel>();
   const [selectedOptionsLocalStorage, setSelectedOptionsLocalStorage] = useState<{
     key: string;
     value: string;
-  }[]>([]);
+  }[]>([]); 
 
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
 
   const getData = async () => {
-    const response = await fetch('http://localhost:8080/user/product/' + name);
-    const data = await response.json();
-    const dataEntries: string[][] = Object.entries(data);
-    console.log(data);
-    setProductData(dataEntries);
+    fetch("http://localhost:8080/user/product/" + name)
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error("Product not found");
+        }
+        return res.json();
+    })
+    .then((data) => {
+        console.log('DATA HERE: ', data);
+        setProductData(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+    setProductData(undefined);
+});
   }
-
 
   const getGooglePhoto = async () => {
     const apiKey = process.env.NEXT_PUBLIC_API_KEY;
@@ -44,7 +53,7 @@ function ProductInfoPage() {
 
 
   useEffect(()=>{
-    const storedOptions = JSON.parse(localStorage.getItem("selectedOptions") as string) as {
+    const storedOptions = JSON.parse(localStorage.getItem("arrayOfItems") as string) as {
       key: string;
       value: string;
     }[];
@@ -59,6 +68,8 @@ function ProductInfoPage() {
   console.log('Stored options', selectedOptionsLocalStorage);
 
 
+  if (productData) {
+
   return (
 
     <div className="product-info">
@@ -69,29 +80,24 @@ function ProductInfoPage() {
       <section className="product-info__card-section">
         <article className="card product-info__energy-card">
           <h3>Energi per 100g</h3>
-          <h2>{} Kcal</h2>
+          <h2>{productData.energi_kcal} Kcal</h2>
         </article>
-          <NutrientCard name={'Kålhydrater'} color={'blueviolet'} percentage={1}/>
-          <NutrientCard name={'Fett'} color={'orange'} percentage={1}/>
-          <NutrientCard name={'Protein'} color={'red'} percentage={1}/>
-       {/* {
-          productData.map((entry: string[]) => {
-            return <p>{entry[0]}: {entry[1]}</p>
-          })} */}
+          <NutrientCard name={'Kolhydrater'} color={'blueviolet'} percentage={parseInt(productData.kolhydrater_g)}/>
+          <NutrientCard name={'Fett'} color={'orange'} percentage={parseInt(productData.fett_totalt_g)}/>
+          <NutrientCard name={'Protein'} color={'red'} percentage={parseInt(productData.protein_g)}/>
       </section>
       <div>
           <h3>Selected Options from Local Storage: </h3>
           <ul>
-          {selectedOptionsLocalStorage.map((option, index) => (  
-            <li key={index}>
-             {option}
-            </li>
-          ))}
-          </ul>
+          {selectedOptionsLocalStorage.slice(1).map((item: any, index) => {
+            return (<li className="card" key={index}>{item.text}: {productData[item.value]}</li>)
+          })}
+        </ul>
         </div>
-        
-    </div>
+      </div>
   )
+}
+else return <p>Loading...</p>
 }
 
 export default ProductInfoPage 
