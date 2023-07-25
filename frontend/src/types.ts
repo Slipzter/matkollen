@@ -39,7 +39,9 @@ export type Livsmedel = {
     fosfor_mg: string,
     fritt_socker_g: string,
     fullkorn_totalt_g: string,
-    gruppering: string,
+
+    gruppering?: string,
+
     jod: string,
     järn_mg: string,
     kalcium_mg: string,
@@ -49,6 +51,7 @@ export type Livsmedel = {
     laurinsyra_g: string,
     linolensyra_g: string,
     linolsyra_g: string,
+    
     livsmedelsnamn: string,
     
     livsmedelsnummer?: string,
@@ -83,4 +86,9 @@ export type Livsmedel = {
     vitamin_e: string,
     vitamin_k: string,
     zink_mg: string, 
+}
+
+export type Pair = {
+    value: string,
+    text: string,
 }

@@ -10,6 +10,10 @@ import { useEffect, useState } from "react";
 function ProductInfoPage() {
   const [imageURL, setImageURL] = useState('');
   const [productData, setProductData] = useState<any>([]);
+  const [selectedOptionsLocalStorage, setSelectedOptionsLocalStorage] = useState<{
+    key: string;
+    value: string;
+  }[]>([]);
 
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
@@ -21,7 +25,6 @@ function ProductInfoPage() {
     console.log(data);
     setProductData(dataEntries);
   }
-
 
 
   const getGooglePhoto = async () => {
@@ -39,6 +42,23 @@ function ProductInfoPage() {
     getGooglePhoto();
   }, [])
 
+
+  useEffect(()=>{
+    const storedOptions = JSON.parse(localStorage.getItem("selectedOptions") as string) as {
+      key: string;
+      value: string;
+    }[];
+
+    console.log("stored", storedOptions)
+    
+    if (storedOptions) {
+      setSelectedOptionsLocalStorage(storedOptions);
+    }
+  }, [])
+
+  console.log('Stored options', selectedOptionsLocalStorage);
+
+
   return (
 
     <div className="product-info">
@@ -54,14 +74,24 @@ function ProductInfoPage() {
           <NutrientCard name={'Kålhydrater'} color={'blueviolet'} percentage={1}/>
           <NutrientCard name={'Fett'} color={'orange'} percentage={1}/>
           <NutrientCard name={'Protein'} color={'red'} percentage={1}/>
-
-       {
+       {/* {
           productData.map((entry: string[]) => {
             return <p>{entry[0]}: {entry[1]}</p>
-          })}
+          })} */}
       </section>
+      <div>
+          <h3>Selected Options from Local Storage: </h3>
+          <ul>
+          {selectedOptionsLocalStorage.map((option, index) => (  
+            <li key={index}>
+             {option}
+            </li>
+          ))}
+          </ul>
+        </div>
+        
     </div>
   )
 }
 
-export default ProductInfoPage
+export default ProductInfoPage 
