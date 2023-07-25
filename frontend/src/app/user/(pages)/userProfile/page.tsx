@@ -6,8 +6,6 @@ function UserProfile(){
     const [selectedOptions, setSelectedOptions] = useState<string[]>([]);
     const [currentOption, setCurrentOption] = useState<string>("");
    
-
-  
     useEffect(()=> {
         const storedOptions = JSON.parse(localStorage.getItem("selectedOptions") as string) as string[];
         if(storedOptions){
@@ -19,7 +17,7 @@ function UserProfile(){
        localStorage.setItem("selectedOptions", JSON.stringify(selectedOptions))
     }, [selectedOptions]);
 
-    const handleOptionChange = (e: any) =>{
+    const handleOptionChange = (e: React.ChangeEvent<HTMLSelectElement>) =>{
         setCurrentOption(e.target.value)
         console.log("Added", e.target.value )
     }
@@ -50,6 +48,14 @@ function UserProfile(){
         </select>
             <button className="add" id = "addButton" onClick = {handleAddOption}>Lägg till</button>
         </div>
+        <div>
+        <h3>Selected Options in UserProfile:</h3>
+        <ul>
+          {selectedOptions.map((option, index) => (
+            <li key={index}>{option}</li>
+          ))}
+        </ul>
+      </div>
     </>
     )
 }
