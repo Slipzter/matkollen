@@ -17,13 +17,13 @@ public class UserController {
         this.service = service;
     }
 
-//    @GetMapping(value = "/user/search/{productName}")
-//    public ResponseEntity<foodUser> searchUserById(@PathVariable String) {
-//        foodUser user = service.getById()
-//        if (user != null) {
-//            return ResponseEntity.ok(user);
-//        }
-//        return ResponseEntity.notFound().build();
-//    }
+    @GetMapping(value = "/user/home/{id}")
+    public ResponseEntity<foodUser> searchUserById(@PathVariable String id) {
+        foodUser user = service.getById(id);
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.notFound().build();
+    }
 
 }
