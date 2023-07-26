@@ -18,8 +18,9 @@ function ProductInfoPage() {
     const response = await fetch(process.env.NEXT_PUBLIC_DOMAIN +'/guest/product/' + name);
     const data = await response.json();
     console.log(data);
-    setProductData(data[0]);
+    setProductData(data);
   }
+
 
   const getGooglePhoto = async () => {
     const apiKey = process.env.NEXT_PUBLIC_API_KEY;
