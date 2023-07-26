@@ -12,7 +12,7 @@ function SearchPage() {
     const searchQuery = search ? search.get('q') : null;
     const encodedSearchQuery = encodeURI(searchQuery || "");
     const [products, setProducts] = useState([]);
-    const [isLoading, setLoading] = useState(false);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true)

@@ -39,7 +39,7 @@ function UserProfile(){
     return (
         <>
         <div className="user-container">
-         <h2 className="welcome-page">Välkommen till Matkollen {} !</h2>
+         <h2 className="welcome-page">Matkollen!</h2>
          <label htmlFor="nutrients" className="label">Välj nedan och lägg till:</label> 
         </div>
         <div className="select-options">
