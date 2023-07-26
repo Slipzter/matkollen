@@ -398,7 +398,14 @@ span{
   font-size: 0.5em;
   margin: 15px 20px;
 }
-
+.card-lists{
+  list-style-type: none;
+  margin-left:50px;
+}
+.list{
+  /* margin: 20px 0px;
+  padding: 20px, 10px; */
+}
 /* ----FOR DESKTOP VERSION ---- */
 
 @media screen and (min-width: 769px) {
