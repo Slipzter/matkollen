@@ -63,7 +63,7 @@ function ProductInfoPage() {
         </article>
           <NutrientCard name={'Kolhydrater'} color={'blueviolet'} percentage={parseInt(productData.kolhydrater_g)}/>
           <NutrientCard name={'Fett'} color={'orange'} percentage={parseInt(productData.fett_totalt_g)}/>
-          <NutrientCard name={'Protein'} color={'red'} percentage={parseInt(productData.protein_g)}/>
+          <NutrientCard name={'Protein'} color={'green'} percentage={parseInt(productData.protein_g)}/>
       </section>
       </div>
   )
