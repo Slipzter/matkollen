@@ -22,7 +22,7 @@ const UserCard = (props : UserCard) => {
       className ='card-product-link'
       >
         <div className='card'>
-          {props.name} {props.flag ? 'FLAGGED' : ''}
+          {props.name} {props.flag ? <i className="fa fa-exclamation-circle flag" aria-hidden="true"></i> : ''}
         </div>
         </Link>
     </>

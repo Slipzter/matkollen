@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Livsmedel } from "@/types";
+import { Livsmedel, Pair } from "@/types";
 
 import Link from "next/link";
 import UserCard from "@/app/(components)/UserCard";
@@ -13,7 +13,7 @@ function SearchPage() {
     const encodedSearchQuery = encodeURI(searchQuery || "");
     const [products, setProducts] = useState([]);
     const [isLoading, setLoading] = useState(true);
-    const [selectedItems, setSelectedItems] = useState<{}[]>([{}]);
+    const [selectedItems, setSelectedItems] = useState<Pair[]>([]);
 
     useEffect(() => {
         setLoading(true)
@@ -63,23 +63,28 @@ function SearchPage() {
             <div>
             {
             
-            products.map((product: Livsmedel, index: number)=>{
+            products.map((product: Livsmedel, index: number) => {
+              const arrayOfTexts: string[] = selectedItems.map(element => element.text);
+              const arrayOfValues: string[] = selectedItems.map(element => element.value);
+
+
+
               const localStorageValue: string = selectedItems[1].value;
               const modified = localStorageValue.split(':').join('');
-                if (product[modified] > 0) {
-                  return (
-                    <div className="search-card-container" key={index}>
-                       <UserCard flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
-                    </div>
-                  )
-                } else {
-                  return (
-                    <div className="search-card-container" key={index}>
-                        <UserCard name={product.livsmedelsnamn} livsmedel={product} />
-                    </div>
-                )
-                }
 
+              if (product[modified] > 0) {
+                return (
+                  <div className="search-card-container" key={index}>
+                      <UserCard flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
+                  </div>
+                )
+              }
+              return (
+                  <div className="search-card-container" key={index}>
+                      <UserCard name={product.livsmedelsnamn} livsmedel={product} />
+                  </div>
+              )
+                
             })}
             </div> 
         </>

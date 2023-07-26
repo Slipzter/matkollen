@@ -1,5 +1,6 @@
 import { cookies } from 'next/headers'
 import UserSearchInput from "@/app/(components)/UserSearchInput";
+import Link from 'next/link';
 
 const getName = async () => {
   const cookieStore = cookies()
@@ -18,7 +19,7 @@ async function Home() {
     <main className="home">
       <div className="home__image"></div>
       <h2 className='welcome-title'>Welcome <br /><span >{name}</span></h2>
-      <a href="/user/userProfile" className="prefences"> Set your prefences </a>
+      <Link href="/user/userProfile" className="prefences"> Set your prefences </Link>
         <UserSearchInput />
     </main>
     </>
