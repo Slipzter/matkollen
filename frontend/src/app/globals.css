@@ -166,10 +166,15 @@ header {
 }
 
 .product-info__title {
-  margin: 0;
+ 
   font-size: 2em;
+  text-align: center;
 }
-
+.selected-info-title{
+  font-size: 1.2em;
+  text-align: center;
+  padding-top:20px
+}
 .product-info__card-section {
   display: flex;
   flex-direction: column;
@@ -400,11 +405,11 @@ span{
 }
 .card-lists{
   list-style-type: none;
-  margin-left:50px;
+  margin-left:40px;
+  width:90%!important;
 }
 .list{
-  /* margin: 20px 0px;
-  padding: 20px, 10px; */
+  width:90%!important;
 }
 /* ----FOR DESKTOP VERSION ---- */
 

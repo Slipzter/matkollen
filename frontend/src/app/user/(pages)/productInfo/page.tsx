@@ -87,7 +87,7 @@ function ProductInfoPage() {
           <NutrientCard name={'Protein'} color={'green'} percentage={parseInt(productData.protein_g)}/>
       </section>
       <div>
-          <h3>Selected Options from Local Storage: </h3>
+          <h3 className="selected-info-title">Dina valda alternativ</h3>
           <ul className="card-lists">
           {selectedOptionsLocalStorage.slice(1).map((item: any, index) => {
             return (
