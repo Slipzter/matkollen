@@ -15,21 +15,10 @@ function ProductInfoPage() {
   const name = searchParams.get('name');
 
   const getData = async () => {
-    fetch("http://localhost:8080/user/product/" + name)
-    .then((res) => {
-        if (!res.ok) {
-            throw new Error("Product not found");
-        }
-        return res.json();
-    })
-    .then((data) => {
-        console.log('DATA HERE: ', data);
-        setProductData(data);
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
-    setProductData(undefined);
-});
+    const response = await fetch(process.env.NEXT_PUBLIC_DOMAIN +'/guest/product/' + name);
+    const data = await response.json();
+    console.log(data);
+    setProductData(data[0]);
   }
 
   const getGooglePhoto = async () => {

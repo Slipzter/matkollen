@@ -2,10 +2,11 @@ import { cookies } from 'next/headers'
 import UserSearchInput from "@/app/(components)/UserSearchInput";
 import Link from 'next/link';
 
+
 const getName = async () => {
   const cookieStore = cookies()
   const id = cookieStore.get("userId")?.value
-  const response = await fetch('http://localhost:8080/user/home/' + id);
+  const response = await fetch(process.env.NEXT_PUBLIC_DOMAIN + '/user/home/' + id);
   const json = await response.json();
   return json.name;
 }
@@ -27,5 +28,4 @@ async function Home() {
     </>
     )
 }
-
 export default Home
