@@ -1,22 +1,35 @@
 'use client'
 
-import { Product } from "@/types";
+import { Livsmedel } from "@/types";
 import NutrientCard from "./NutrientCard"
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
+
+
 function ProductInfoPage() {
   const [imageURL, setImageURL] = useState('');
-  const [productData, setProductData] = useState<any>([]);
+  const [productData, setProductData] = useState<Livsmedel>();
 
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
 
   const getData = async () => {
-    const response = await fetch('http://localhost:8080/guest/product/' + name);
-    const data = await response.json();
-    console.log(data);
-    setProductData(data[0]);
+    fetch("http://localhost:8080/user/product/" + name)
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error("Product not found");
+        }
+        return res.json();
+    })
+    .then((data) => {
+        console.log('DATA HERE: ', data);
+        setProductData(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+    setProductData(undefined);
+});
   }
 
   const getGooglePhoto = async () => {
@@ -26,7 +39,7 @@ function ProductInfoPage() {
       + name + "&cx=" + searchEngineId + "&key=" + apiKey + "&gl=se&hl=sv&searchType=image");
     const jsonData = await response.json();
     console.log(jsonData);
-    setImageURL(jsonData.items[1].link);
+    setImageURL(jsonData.items[0].link);
   }
 
   useEffect(() => {
@@ -34,7 +47,7 @@ function ProductInfoPage() {
     getGooglePhoto();
   }, [])
 
-
+  if (productData) {
 
   return (
 
@@ -52,8 +65,10 @@ function ProductInfoPage() {
           <NutrientCard name={'Fett'} color={'orange'} percentage={parseInt(productData.fett_totalt_g)}/>
           <NutrientCard name={'Protein'} color={'red'} percentage={parseInt(productData.protein_g)}/>
       </section>
-    </div>
+      </div>
   )
 }
+else return <p>Loading...</p>
+}
 
-export default ProductInfoPage
+export default ProductInfoPage 
