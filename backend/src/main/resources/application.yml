@@ -1,6 +1,4 @@
-debug: true
-server:
-  port: 8080
+
 spring:
   datasource:
     url: ${AZURE_CONN_STRING}
