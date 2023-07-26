@@ -127,15 +127,13 @@ header {
 }
 
 .search-page {
-  background-image: url('/square_bg.png');
+  width:100vw;
+  height:500px
 }
 
 .search-img{
+  margin-top:20px;
   display: block;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-
 }
 
 .card-product-link{
@@ -164,10 +162,15 @@ header {
 }
 
 .product-info__title {
-  margin: 0;
+ 
   font-size: 2em;
+  text-align: center;
 }
-
+.selected-info-title{
+  font-size: 1.2em;
+  text-align: center;
+  padding-top:20px
+}
 .product-info__card-section {
   display: flex;
   flex-direction: column;
@@ -293,8 +296,7 @@ text-align: center;
 border-radius: 40px;
 background-color: #ffaa00;
 border: none;
-margin-top: 450px
-
+margin-top: 600px
 }
 
 .not_found_error a{
@@ -302,10 +304,20 @@ margin-top: 450px
   font-size: 20px;
   text-decoration: none;
 }
-.welcome-page{
-  color:#ffaa00;
-  margin-top: 20px;
 
+.product-no-title{
+  color:red;
+}
+.welcome-page{
+  color:#333;
+  margin-top: 20px;
+  font-size: 30px;
+
+}
+.user-profile-container{
+height:100vh;
+background: rgb(253,220,191);
+background: linear-gradient(0deg, rgba(253,220,191,1) 10%, rgba(249,230,146,1) 83%);
 }
 .user-container{
   display: flex;
@@ -338,19 +350,22 @@ margin-top: 450px
   padding:10px 20px;
   background-color: #ffaa00;
   border:none;
-  font-size: 14px;
+  font-size: 18px;
   color: #000; 
-  padding: 10px 20px;
-  font-size: 14px;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
+.selected-container{
+  margin-top:100px
+}
+.selected-title{
+  font-size: 20px;
+  margin-left:80px
+}
 .label{
- margin-top:40px;
- margin-left:-80px;
- font-size: 18px;
+ margin-left:100px;
+ font-size: 20px;
 }
 
 .selected-list {
@@ -358,12 +373,22 @@ margin-top: 450px
   margin: 40px;
   padding: 20px;
 }
-
 .selected-list li {
   font-size: 18px;
   margin-bottom: 10px;
-  background-color: aqua;
+  background-color: #fff;
+  box-shadow: 7px 6px 9px 1px rgba(244, 197, 68, 0.602);
+  padding:20px;
 }
+
+.selected-list li:first-child {
+  padding:0px;
+}
+.prefences{
+  font-size: 20px;
+  color: #222;
+}
+
 h3 {
   color: #333;
   margin-bottom: 10px;
@@ -386,6 +411,15 @@ span{
   font-size: 0.5em;
   margin: 15px 20px;
 }
+.card-lists{
+  list-style-type: none;
+  margin-left:40px;
+  width:90%!important;
+}
+.list{
+  width:90%!important;
+}
+
 
 .flag {
   color:rgb(255, 140, 0);
@@ -427,8 +461,9 @@ span{
   width:30%;
 }
 .not_found_error{
-  margin-top: 330px;
+  margin-top: 600px;
   width: 24%;
 }
+
 
 }

@@ -49,7 +49,7 @@ function SearchPage() {
 
             <div className="page_not_found">
                     <h1>404</h1>
-                    <h3>Produkten hittades inte</h3>
+                    <h3 className="product-no-title">Produkten hittades inte</h3>
                         <div className="not_found_error card">
                     <Link href="/user/home"><p>Sök igen...</p></Link>
                 </div>
@@ -58,7 +58,7 @@ function SearchPage() {
     return (
     <>  
         <div className="search-page">
-         <img src="/food2.jpg" alt="food" className="search-img" /> 
+         <img src="https://source.unsplash.com/featured/?food" alt="food" className="search-img" width="100%" height="450"/> 
         </div> 
             <div>
             {
