@@ -1,13 +1,15 @@
 'use client'
 
-import { Product } from "@/types";
+import { Livsmedel } from "@/types";
 import NutrientCard from "./NutrientCard"
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
+
+
 function ProductInfoPage() {
   const [imageURL, setImageURL] = useState('');
-  const [productData, setProductData] = useState<any>([]);
+  const [productData, setProductData] = useState<Livsmedel>();
 
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
@@ -26,7 +28,7 @@ function ProductInfoPage() {
       + name + "&cx=" + searchEngineId + "&key=" + apiKey + "&gl=se&hl=sv&searchType=image");
     const jsonData = await response.json();
     console.log(jsonData);
-    setImageURL(jsonData.items[1].link);
+    setImageURL(jsonData.items[0].link);
   }
 
   useEffect(() => {
@@ -34,7 +36,7 @@ function ProductInfoPage() {
     getGooglePhoto();
   }, [])
 
-
+  if (productData) {
 
   return (
 
@@ -50,10 +52,12 @@ function ProductInfoPage() {
         </article>
           <NutrientCard name={'Kolhydrater'} color={'blueviolet'} percentage={parseInt(productData.kolhydrater_g)}/>
           <NutrientCard name={'Fett'} color={'orange'} percentage={parseInt(productData.fett_totalt_g)}/>
-          <NutrientCard name={'Protein'} color={'red'} percentage={parseInt(productData.protein_g)}/>
+          <NutrientCard name={'Protein'} color={'green'} percentage={parseInt(productData.protein_g)}/>
       </section>
-    </div>
+      </div>
   )
 }
+else return <p>Loading...</p>
+}
 
-export default ProductInfoPage
+export default ProductInfoPage 

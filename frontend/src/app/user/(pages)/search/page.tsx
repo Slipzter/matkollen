@@ -2,7 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { Livsmedel } from "@/types";
+import { Livsmedel, Pair } from "@/types";
 
 import Link from "next/link";
 import UserCard from "@/app/(components)/UserCard";
@@ -12,7 +12,8 @@ function SearchPage() {
     const searchQuery = search ? search.get('q') : null;
     const encodedSearchQuery = encodeURI(searchQuery || "");
     const [products, setProducts] = useState([]);
-    const [isLoading, setLoading] = useState(false);
+    const [isLoading, setLoading] = useState(true);
+    const [selectedItems, setSelectedItems] = useState<Pair[]>([]);
 
     useEffect(() => {
         setLoading(true)
@@ -27,13 +28,21 @@ function SearchPage() {
             console.log('DATA HERE: ', data);
             setProducts(data);
             setLoading(false);
-    })
-    .catch((error) => {
-        console.error("Error fetching data:", error);
-        setProducts([]);
-        setLoading(false);
-    });
-}, [])
+      })
+      .catch((error) => {
+          console.error("Error fetching data:", error);
+          setProducts([]);
+          setLoading(false);
+      });
+    }, [])
+
+    useEffect(()=> {
+      const storedOptions: [] = JSON.parse(localStorage.getItem("arrayOfItems") as any);
+      if(storedOptions){
+          setSelectedItems(storedOptions);
+          console.log("Stored: ", storedOptions)
+      }
+    }, []);
 
     if (isLoading) return <p>Loading..</p>
     if (!products || products.length === 0) return (
@@ -52,12 +61,30 @@ function SearchPage() {
          <img src="https://source.unsplash.com/featured/?food" alt="food" className="search-img" width="100%" height="450"/> 
         </div> 
             <div>
-            {products.map((product: Livsmedel, index: number)=>{
+            {
+            
+            products.map((product: Livsmedel, index: number) => {
+              const arrayOfTexts: string[] = selectedItems.map(element => element.text);
+              const arrayOfValues: string[] = selectedItems.map(element => element.value);
+
+
+
+              const localStorageValue: string = selectedItems[1].value;
+              const modified = localStorageValue.split(':').join('');
+
+              if (product[modified] > 0) {
                 return (
-                    <div className="search-card-container" key={index}>
-                        <UserCard name={product.livsmedelsnamn} livsmedel={product} />
-                    </div>
+                  <div className="search-card-container" key={index}>
+                      <UserCard flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
+                  </div>
                 )
+              }
+              return (
+                  <div className="search-card-container" key={index}>
+                      <UserCard name={product.livsmedelsnamn} livsmedel={product} />
+                  </div>
+              )
+                
             })}
             </div> 
         </>

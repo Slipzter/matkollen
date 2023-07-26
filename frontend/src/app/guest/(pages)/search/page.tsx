@@ -11,7 +11,7 @@ function SearchPage() {
     const searchQuery = search ? search.get('q') : null;
     const encodedSearchQuery = encodeURI(searchQuery || "");
     const [products, setProducts] = useState([]);
-    const [isLoading, setLoading] = useState(false);
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         setLoading(true)
@@ -47,7 +47,7 @@ function SearchPage() {
     return (
     <>   
         <div className="search-page">
-         <img src="/food2.jpg" alt="food" className="search-img" /> 
+         <img src="https://source.unsplash.com/featured/?food" width="100%" height="450" alt="food" className="search-img" /> 
         </div> 
             <div>
             {products.map((product: Product, index: number)=>{
