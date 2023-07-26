@@ -38,10 +38,11 @@ function UserProfile(){
 
     return (
         <>
+        <div className="user-profile-container" >
         <div className="user-container">
-         <h2 className="welcome-page">Matkollen!</h2>
-         <label htmlFor="nutrients" className="label">Välj nedan och lägg till:</label> 
+         <h2 className="welcome-page">MATKOLLEN!</h2>  
         </div>
+        <label htmlFor="nutrients" className="label">Välj nedan och lägg till</label>
         <div className="select-options">
         <select id="dropdown" name="preferences" className="options" value={currentItem?.value} onChange={handleOptionChange} >
             <option>Välj</option>
@@ -102,13 +103,14 @@ function UserProfile(){
         </select>
             <button className="add" id = "addButton" onClick = {handleAddOption}>Lägg till</button>
         </div>
-        <div>
-        <h3>Selected Options in UserProfile: </h3>
-        <ul>
+        <div className="selected-container">
+        <p className="selected-title">Dina valda alternativ </p>
+        <ul className="selected-list">
         {selectedItems.map((item: any, index) => (      
             (<li key={index}>{item.text}</li>)
             ))}
         </ul>
+      </div>
       </div>
     </>
     )
