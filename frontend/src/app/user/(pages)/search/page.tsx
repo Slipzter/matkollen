@@ -13,6 +13,7 @@ function SearchPage() {
     const encodedSearchQuery = encodeURI(searchQuery || "");
     const [products, setProducts] = useState([]);
     const [isLoading, setLoading] = useState(true);
+    const [selectedItems, setSelectedItems] = useState<{}[]>([{}]);
 
     useEffect(() => {
         setLoading(true)
@@ -27,13 +28,21 @@ function SearchPage() {
             console.log('DATA HERE: ', data);
             setProducts(data);
             setLoading(false);
-    })
-    .catch((error) => {
-        console.error("Error fetching data:", error);
-        setProducts([]);
-        setLoading(false);
-    });
-}, [])
+      })
+      .catch((error) => {
+          console.error("Error fetching data:", error);
+          setProducts([]);
+          setLoading(false);
+      });
+    }, [])
+
+    useEffect(()=> {
+      const storedOptions: [] = JSON.parse(localStorage.getItem("arrayOfItems") as any);
+      if(storedOptions){
+          setSelectedItems(storedOptions);
+          console.log("Stored: ", storedOptions)
+      }
+    }, []);
 
     if (isLoading) return <p>Loading..</p>
     if (!products || products.length === 0) return (
@@ -52,12 +61,25 @@ function SearchPage() {
          <img src="/food2.jpg" alt="food" className="search-img" /> 
         </div> 
             <div>
-            {products.map((product: Livsmedel, index: number)=>{
-                return (
+            {
+            
+            products.map((product: Livsmedel, index: number)=>{
+              const localStorageValue: string = selectedItems[1].value;
+              const modified = localStorageValue.split(':').join('');
+                if (product[modified] > 0) {
+                  return (
+                    <div className="search-card-container" key={index}>
+                       <UserCard flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
+                    </div>
+                  )
+                } else {
+                  return (
                     <div className="search-card-container" key={index}>
                         <UserCard name={product.livsmedelsnamn} livsmedel={product} />
                     </div>
                 )
+                }
+
             })}
             </div> 
         </>
