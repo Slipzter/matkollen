@@ -421,6 +421,10 @@ span{
 }
 
 
+.flag {
+  color:rgb(255, 140, 0);
+}
+
 /* ----FOR DESKTOP VERSION ---- */
 
 @media screen and (min-width: 769px) {

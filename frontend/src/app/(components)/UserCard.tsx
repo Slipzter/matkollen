@@ -5,6 +5,7 @@ import Link from 'next/link';
 type UserCard = {
   name: string,
   livsmedel: object,
+  flag?: string,
 }
 
 const UserCard = (props : UserCard) => {
@@ -21,7 +22,7 @@ const UserCard = (props : UserCard) => {
       className ='card-product-link'
       >
         <div className='card'>
-          {props.name}
+          {props.name} {props.flag ? <i className="fa fa-exclamation-circle flag" aria-hidden="true"></i> : ''}
         </div>
         </Link>
     </>
