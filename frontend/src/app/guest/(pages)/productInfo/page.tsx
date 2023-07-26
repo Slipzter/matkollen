@@ -13,7 +13,7 @@ function ProductInfoPage() {
   const name = searchParams.get('name');
 
   const getData = async () => {
-    const response = await fetch('http://localhost:8080/guest/product/' + name);
+    const response = await fetch(process.env.NEXT_PUBLIC_DOMAIN +'/guest/product/' + name);
     const data = await response.json();
     console.log(data);
     setProductData(data[0]);

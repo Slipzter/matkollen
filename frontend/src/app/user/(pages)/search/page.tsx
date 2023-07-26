@@ -16,7 +16,7 @@ function SearchPage() {
 
     useEffect(() => {
         setLoading(true)
-        fetch("http://localhost:8080/user/search/" + encodedSearchQuery)
+        fetch("https://blue-tea-matkollen-app.azurewebsites.net/user/search/" + encodedSearchQuery)
         .then((res) => {
             if (!res.ok) {
                 throw new Error("Product not found");
