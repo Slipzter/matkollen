@@ -30,3 +30,6 @@ logging:
       springframework:
         boot:
           autoconfigure: ERROR
+server:
+  port: 8080
+debug: true

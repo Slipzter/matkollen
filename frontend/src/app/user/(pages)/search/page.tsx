@@ -75,13 +75,13 @@ function SearchPage() {
               if (product[modified] > 0) {
                 return (
                   <div className="search-card-container" key={index}>
-                      <UserCard flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
+                      <UserCard id={product.livsmedelsnummer} flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
                   </div>
                 )
               }
               return (
                   <div className="search-card-container" key={index}>
-                      <UserCard name={product.livsmedelsnamn} livsmedel={product} />
+                      <UserCard id={product.livsmedelsnummer} name={product.livsmedelsnamn} livsmedel={product} />
                   </div>
               )
                 

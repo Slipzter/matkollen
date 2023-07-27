@@ -40,9 +40,8 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
         System.out.println("Id: " + user.getName() + "\n");
         System.out.println("Email: " + user.getEmail() + "\n");
         System.out.println("Full name: " + user.getFullName() + "\n");
-//        System.out.println(tokenCookie.getName());
 
-        response.sendRedirect("http://localhost:3000/user/home");
+        response.sendRedirect("https://matkollen-frontend.vercel.app/user/home" + "?id=" + user.getName());
     }
 
 }

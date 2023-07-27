@@ -51,9 +51,10 @@ function SearchPage() {
         </div> 
             <div>
             {products.map((product: Product, index: number)=>{
+              console.log(product.livsmedelsnummer)
                 return (
                     <div className="search-card-container" key={index}>
-                        <GuestCard name={product.livsmedelsnamn}/>
+                        <GuestCard name={product.livsmedelsnamn} id={product.livsmedelsnummer}/>
                     </div>
                 )
             })}

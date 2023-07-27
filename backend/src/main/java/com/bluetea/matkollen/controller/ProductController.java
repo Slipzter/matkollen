@@ -37,9 +37,9 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping(value = "/guest/product/{productName}")
-    public ResponseEntity<ProductGuestDTO> getProductByName(@PathVariable String productName) {
-        ProductGuestDTO product = service.getProductByName(productName);
+    @GetMapping(value = "/guest/product/{id}")
+    public ResponseEntity<ProductGuestDTO> getProductById(@PathVariable String id) {
+        ProductGuestDTO product = service.getProductById(id);
         if (product != null) {
             return ResponseEntity.ok(product);
         }
@@ -58,9 +58,9 @@ public class ProductController {
         return ResponseEntity.notFound().build();
     }
 
-    @GetMapping(value = "/user/product/{productName}")
-    public ResponseEntity<livsmedel> getFullProductById(@PathVariable String productName) {
-        livsmedel product = service.getFullProductByName(productName);
+    @GetMapping(value = "/user/product/{id}")
+    public ResponseEntity<livsmedel> getFullProductById(@PathVariable String id) {
+        livsmedel product = service.getFullProductById(id);
         if (product != null) {
             return ResponseEntity.ok(product);
         }

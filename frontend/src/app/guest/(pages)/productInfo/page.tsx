@@ -4,6 +4,7 @@ import { Livsmedel } from "@/types";
 import NutrientCard from "./NutrientCard"
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { headers } from "next/headers";
 
 
 
@@ -12,14 +13,27 @@ function ProductInfoPage() {
   const [productData, setProductData] = useState<Livsmedel>();
 
   const searchParams = useSearchParams();
+  const id = searchParams.get('id');
   const name = searchParams.get('name');
 
   const getData = async () => {
-    const response = await fetch(process.env.NEXT_PUBLIC_DOMAIN +'/guest/product/' + name);
-    const data = await response.json();
-    console.log(data);
-    setProductData(data);
-  }
+    fetch(process.env.NEXT_PUBLIC_DOMAIN + "/guest/product/" + id)
+    .then((res) => {
+
+        if (!res.ok) {
+            throw new Error("Product not found");
+        }
+        return res.json();
+    })
+    .then((data) => {
+        console.log('DATA HERE: ', data);
+        setProductData(data);
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
+    setProductData(undefined);
+});
+}
 
 
   const getGooglePhoto = async () => {

@@ -26,6 +26,15 @@ public class ProductService {
         return convertToProductGuestDTO(product);
     }
 
+    public ProductGuestDTO getProductById(String id) {
+        livsmedel product = repo.getById(id);
+        return convertToProductGuestDTO(product);
+    }
+
+    public livsmedel getFullProductById(String id) {
+        return repo.getById(id);
+    }
+
     public livsmedel getFullProductByName(String name) {
 
         String formatted = name.replace("%20", " ");
@@ -52,13 +61,15 @@ public class ProductService {
         return list;
     }
 
-    private ProductGuestDTO convertToProductGuestDTO (livsmedel product) {
+    private ProductGuestDTO convertToProductGuestDTO(livsmedel product) {
         return new ProductGuestDTO(
                 product.getLivsmedelsnamn(),
                 product.getEnergi_kcal(),
                 product.getFett_totalt_g(),
                 product.getProtein_g(),
-                product.getKolhydrater_g()
+                product.getKolhydrater_g(),
+                product.getLivsmedelsnummer()
         );
     }
 }
+

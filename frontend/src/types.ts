@@ -11,6 +11,7 @@ export type Product =  {
     livsmedelsnamn: string,
     protein_g: number,
     searchQuery?: string,
+    livsmedelsnummer: string,
 }
 
 export type Nutrient = {
