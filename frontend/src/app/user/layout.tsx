@@ -27,7 +27,7 @@ export default function RootLayout({
             <ul>
               <Link className="nav-home nav-button" href="/user/home"><i className="fa fa-search"></i></Link>
               <Link className="nav-landing nav-button" href="/user/userProfile"><i className="fa fa-user-circle"></i></Link>
-              <Link className="nav-logout nav-button" href="https://blue-tea-matkollen-app.azurewebsites.net/user/logout">Logga ut</Link>
+              <Link className="nav-logout nav-button" href={process.env.NEXT_PUBLIC_LOGOUT!}>Logga ut</Link>
             </ul>
           </nav>
         </header>

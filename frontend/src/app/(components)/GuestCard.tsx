@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 type GuestCard = {
   name: string,
+  id: string,
 }
 
 const GuestCard = (props : GuestCard) => {
@@ -13,6 +14,7 @@ const GuestCard = (props : GuestCard) => {
         href={{
           pathname: '/guest/productInfo',
           query: {
+            id: props.id,
             name: props.name,
           }
         }}

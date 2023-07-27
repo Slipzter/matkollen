@@ -17,9 +17,10 @@ function ProductInfoPage() {
 
   const searchParams = useSearchParams();
   const name = searchParams.get('name');
+  const id = searchParams.get('id');
 
   const getData = async () => {
-    fetch("http://localhost:8080/user/product/" + name)
+    fetch(process.env.NEXT_PUBLIC_DOMAIN + "/user/product/" + id)
     .then((res) => {
         if (!res.ok) {
             throw new Error("Product not found");
@@ -34,7 +35,7 @@ function ProductInfoPage() {
     console.error("Error fetching data:", error);
     setProductData(undefined);
 });
-  }
+}
 
   const getGooglePhoto = async () => {
     const apiKey = process.env.NEXT_PUBLIC_API_KEY;

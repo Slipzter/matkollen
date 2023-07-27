@@ -5,6 +5,7 @@ import Link from 'next/link';
 type UserCard = {
   name: string,
   livsmedel: object,
+  id: string | undefined,
   flag?: string,
 }
 
@@ -15,6 +16,7 @@ const UserCard = (props : UserCard) => {
       href={{
         pathname: '/user/productInfo',
         query: {
+          id: props.id,
           name: props.name,
         }
       }}

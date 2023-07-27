@@ -17,7 +17,7 @@ function SearchPage() {
 
     useEffect(() => {
         setLoading(true)
-        fetch("https://blue-tea-matkollen-app.azurewebsites.net/user/search/" + encodedSearchQuery)
+        fetch(process.env.NEXT_PUBLIC_DOMAIN + "/user/search/" + encodedSearchQuery)
         .then((res) => {
             if (!res.ok) {
                 throw new Error("Product not found");
@@ -75,13 +75,13 @@ function SearchPage() {
               if (product[modified] > 0) {
                 return (
                   <div className="search-card-container" key={index}>
-                      <UserCard flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
+                      <UserCard id={product.livsmedelsnummer} flag={'true'} name={product.livsmedelsnamn} livsmedel={product} />
                   </div>
                 )
               }
               return (
                   <div className="search-card-container" key={index}>
-                      <UserCard name={product.livsmedelsnamn} livsmedel={product} />
+                      <UserCard id={product.livsmedelsnummer} name={product.livsmedelsnamn} livsmedel={product} />
                   </div>
               )
                 

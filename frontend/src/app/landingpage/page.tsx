@@ -3,7 +3,6 @@ import Link from 'next/link'
 import React from 'react'
 
 const landing = () => {
-  
   return (
     <>
       <div className='landing'>
@@ -14,7 +13,7 @@ const landing = () => {
         </div>
 
       <div className='footer'>
-        <Link className='login' href='https://blue-tea-matkollen-app.scm.azurewebsites.net/login'>
+        <Link className='login' href={process.env.NEXT_PUBLIC_LOGIN!}>
           Logga in
         </Link>
         <Link href={`/guest/home`} className='continue-link'>Fortsätt som gäst</Link>
