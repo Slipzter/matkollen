@@ -19,7 +19,7 @@ function ProductInfoPage() {
   const name = searchParams.get('name');
 
   const getData = async () => {
-    fetch("http://localhost:8080/user/product/" + name)
+    fetch(process.env.NEXT_PUBLIC_DOMAIN + "/user/product/" + name)
     .then((res) => {
         if (!res.ok) {
             throw new Error("Product not found");

@@ -25,7 +25,7 @@ export default function RootLayout({
           <button className="nav-back nav-button" onClick={handleGoBack}><i className="fa fa-arrow-circle-left"></i></button>
           <nav>
             <ul>
-              <Link className="nav-home nav-button" href="/home"><i className="fa fa-search"></i></Link>
+              <Link className="nav-home nav-button" href="/guest/home"><i className="fa fa-search"></i></Link>
             </ul>
           </nav>
         </header>
