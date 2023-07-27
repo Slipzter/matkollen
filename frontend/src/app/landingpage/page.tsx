@@ -14,7 +14,7 @@ const landing = () => {
         </div>
 
       <div className='footer'>
-        <Link className='login' href='https://blue-tea-matkollen-app.azurewebsites.net/login'>
+        <Link className='login' href='http://localhost:8080/login'>
           Logga in
         </Link>
         <Link href={`/guest/home`} className='continue-link'>Fortsätt som gäst</Link>
