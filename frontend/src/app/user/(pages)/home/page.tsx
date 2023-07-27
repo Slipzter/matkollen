@@ -8,11 +8,11 @@ import { useSearchParams } from 'next/navigation';
 
 
 async function Home() {
-    const searchParams = useSearchParams();
-    const id = searchParams ? searchParams.get('id') : null;
-    const response = await fetch(process.env.NEXT_PUBLIC_DOMAIN + '/user/home/' + id);
-    const json = await response.json();
-    const name = json.name;
+    // const searchParams = useSearchParams();
+    // const id = searchParams ? searchParams.get('id') : null;
+    // const response = await fetch(process.env.NEXT_PUBLIC_DOMAIN + '/user/home/' + id);
+    // const json = await response.json();
+    // const name = json.name;
 
     return (
     <>
