@@ -8,7 +8,7 @@ const landing = () => {
     <>
       <div className='landing'>
       <div className='landing-background'>
-      <img className= 'logo-img' src="/bluetea-logo.png" alt="" />
+      <Link href= "/team"><img className= 'logo-img' src="/bluetea-logo.png" alt="" /></Link>
         <div className='logo'>
         <h1 className='app-title'>MATKOLLEN</h1>
         </div>
@@ -20,6 +20,8 @@ const landing = () => {
         <Link href={`/guest/home`} className='continue-link'>Fortsätt som gäst</Link>
       </div>
         </div>
+        <h1>Matkollen</h1>
+        <p>This is an awesome app</p>
       </div>
     </>
   )
