@@ -468,6 +468,10 @@ p {
   font-size: 14px;
 }
 
+.team-icons {
+  width: 36px;
+}
+
 /* ----FOR DESKTOP VERSION ---- */
 
 @media screen and (min-width: 769px) {
