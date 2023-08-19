@@ -1,10 +1,11 @@
-
+debug: true
+server:
+  port: 8080
 spring:
   datasource:
-    url: ${AZURE_CONN_STRING}
-    username: ${AZURE_USERNAME}
-    password: ${AZURE_PASSWORD}
-    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: tim
+    password: 123
   jpa:
     defer-datasource-initialization: true
     hibernate:
@@ -23,13 +24,9 @@ spring:
     output:
       ansi:
         enabled: always
-
 logging:
   level:
     org:
       springframework:
         boot:
           autoconfigure: ERROR
-server:
-  port: 8080
-debug: true

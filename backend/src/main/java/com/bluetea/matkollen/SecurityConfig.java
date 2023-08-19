@@ -50,7 +50,7 @@ public class SecurityConfig {
                         logout.deleteCookies("userId")
                                 .invalidateHttpSession(true)
                                 .logoutUrl("/user/logout")
-                                .logoutSuccessUrl("https://matkollen-frontend.vercel.app/")
+                                .logoutSuccessUrl("localhost:3000")
                 )
                 .build();
     }

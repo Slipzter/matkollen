@@ -30,18 +30,11 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
         foodUser currentUser = new foodUser(user.getName(), user.getFullName(), user.getEmail());
         service.createUser(currentUser);
 
-//        Cookie tokenCookie = new Cookie("userId", user.getName());
-//        tokenCookie.setMaxAge(60);
-//        tokenCookie.setPath("/");
-//        tokenCookie.setHttpOnly(false);
-//        tokenCookie.setSecure(true);
-//        response.addCookie(tokenCookie);
-
         System.out.println("Id: " + user.getName() + "\n");
         System.out.println("Email: " + user.getEmail() + "\n");
         System.out.println("Full name: " + user.getFullName() + "\n");
 
-        response.sendRedirect("https://matkollen-frontend.vercel.app/user/home" + "?id=" + user.getName());
+        response.sendRedirect("localhost:3000/user/home" + "?id=" + user.getName());
     }
 
 }
