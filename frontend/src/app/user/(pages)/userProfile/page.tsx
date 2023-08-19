@@ -1,6 +1,6 @@
 'use client'
 import { Pair } from "@/types";
-import { JSXElementConstructor, Key, PromiseLikeOfReactNode, ReactElement, ReactNode, ReactPortal, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 function UserProfile(){
     const [selectedItems, setSelectedItems] = useState<{}[]>([{}]);

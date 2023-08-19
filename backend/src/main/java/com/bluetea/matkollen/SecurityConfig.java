@@ -50,7 +50,7 @@ public class SecurityConfig {
                         logout.deleteCookies("userId")
                                 .invalidateHttpSession(true)
                                 .logoutUrl("/user/logout")
-                                .logoutSuccessUrl("localhost:3000")
+                                .logoutSuccessUrl("/")
                 )
                 .build();
     }

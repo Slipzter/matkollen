@@ -34,7 +34,7 @@ public class CustomSuccessHandler implements AuthenticationSuccessHandler {
         System.out.println("Email: " + user.getEmail() + "\n");
         System.out.println("Full name: " + user.getFullName() + "\n");
 
-        response.sendRedirect("localhost:3000/user/home" + "?id=" + user.getName());
+        response.sendRedirect("http://localhost:3000/user/home" + "?id=" + user.getName());
     }
 
 }
