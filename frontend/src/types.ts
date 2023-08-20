@@ -92,3 +92,7 @@ export type Pair = {
     value: string,
     text: string,
 }
+
+export type Preference = {
+    name: string,
+}

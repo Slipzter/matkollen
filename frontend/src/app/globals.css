@@ -251,7 +251,7 @@ header {
 
  .nav-header {
   background-color: #333;
-  height: 6.5vh;
+  height: 60px;
  }
 
  .nav-header i {
@@ -282,7 +282,6 @@ nav {
   padding: 1vh;
 }
 .page_not_found {
-  height: 93.5vh;
   background-image: url('/cat1.png');
   background-color: #fff;
   padding-top:50px;
@@ -297,14 +296,14 @@ nav {
 }
 
 .not_found_error{
-text-align: center;
-border-radius: 40px;
-background-color: #ffaa00;
-border: none;
-margin-top: 600px
+  text-align: center;
+  border-radius: 40px;
+  background-color: #ffaa00;
+  border: none;
+  margin-top: 600px
 }
 
-.not_found_error a{
+.not_found_error a {
   color: blue;
   font-size: 20px;
   text-decoration: none;
@@ -313,16 +312,19 @@ margin-top: 600px
 .product-no-title{
   color:red;
 }
+
 .welcome-page{
   color:#333;
   margin-top: 20px;
   font-size: 30px;
+}
 
-}
 .user-profile-container{
-background: rgb(253,220,191);
-background: linear-gradient(0deg, rgba(253,220,191,1) 10%, rgba(249,230,146,1) 83%);
+  height: 100%;
+  background: rgb(253,220,191);
+  background: linear-gradient(0deg, rgba(253,220,191,1) 10%, rgba(249,230,146,1) 83%);
 }
+
 .user-container{
   display: flex;
   flex-direction: column;
@@ -385,12 +387,23 @@ background: linear-gradient(0deg, rgba(253,220,191,1) 10%, rgba(249,230,146,1) 8
   padding:20px;
 }
 
-.selected-list li:first-child {
-  padding:0px;
-}
+
 .prefences{
   font-size: 20px;
   color: #222;
+}
+
+.preference-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.preference-card:hover {
+  cursor: pointer;
+}
+
+.preference-card__button {
+  
 }
 
 h3 {

@@ -1,6 +1,7 @@
 'use client'
 import { Pair } from "@/types";
 import { useEffect, useState } from "react";
+import PreferenceCard from "./PreferenceCard";
 
 function UserProfile(){
     const [selectedItems, setSelectedItems] = useState<{}[]>([{}]);
@@ -101,13 +102,13 @@ function UserProfile(){
                     <option value="vitamin_k">K-vitamin (μg)</option>
                     <option value="zink_mg">Zink (mg)</option>
                 </select>
-                <button className="add" id = "addButton" onClick = {handleAddOption}>Lägg till</button>
+                <button className="add" id="addButton" onClick={handleAddOption}>Lägg till</button>
             </div>
             <div className="selected-container">
                 <p className="selected-title">Dina valda alternativ: </p>
                 <ul className="selected-list">
-                {selectedItems.map((item: any, index) => (      
-                    (<li key={index}>{item.text}</li>)
+                {selectedItems.slice(1).map((item: any, index) => (      
+                    (<PreferenceCard key={index} name={item.text}/>)
                     ))}
                 </ul>
             </div>
