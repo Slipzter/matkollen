@@ -4,6 +4,7 @@ import { Livsmedel } from "@/types";
 import NutrientCard from "./NutrientCard"
 import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import MicroNutrientCard from "./MicroNutrientCard";
 
 
 
@@ -94,10 +95,10 @@ function ProductInfoPage() {
             if (productData[item.value] > 0) {
               return (
                 <li className="product-info__energy-card" key={index}>
-                  <NutrientCard name={item.text}color={"red"} percentage={productData[item.value]} />
+                  <MicroNutrientCard name={item.text} color={'red'} percentage={productData[item.value]} />
                   </li>
                 )
-            }
+              }
           })}
         </ul>
         </div>

@@ -1,7 +1,7 @@
 import { Nutrient } from "@/types"
 
 
-function NutrientCard(props: Nutrient) {
+function MicroNutrientCard(props: Nutrient) {
 
   const percentageAmount = props.percentage;
 
@@ -13,7 +13,7 @@ function NutrientCard(props: Nutrient) {
         </h3>
       </div>
       <h4>
-        {percentageAmount}%
+        {percentageAmount}
       </h4>
       <div className="nutrient-card__progress"style={{background: 'lightgray'}}>
         <div className="nutrient-card__progress-filling" style={{background: `${props.color}`, width: `${percentageAmount}` + '%'}}>
@@ -23,4 +23,4 @@ function NutrientCard(props: Nutrient) {
   )
 }
 
-export default NutrientCard
+export default MicroNutrientCard
