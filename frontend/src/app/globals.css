@@ -320,7 +320,6 @@ margin-top: 600px
 
 }
 .user-profile-container{
-height:100vh;
 background: rgb(253,220,191);
 background: linear-gradient(0deg, rgba(253,220,191,1) 10%, rgba(249,230,146,1) 83%);
 }
@@ -362,7 +361,7 @@ background: linear-gradient(0deg, rgba(253,220,191,1) 10%, rgba(249,230,146,1) 8
 }
 
 .selected-container{
-  margin-top:100px
+  margin-top:3em
 }
 .selected-title{
   font-size: 20px;
@@ -375,7 +374,7 @@ background: linear-gradient(0deg, rgba(253,220,191,1) 10%, rgba(249,230,146,1) 8
 
 .selected-list {
   list-style: none;
-  margin: 40px;
+  margin: 0 40px 40px 40px;
   padding: 20px;
 }
 .selected-list li {
