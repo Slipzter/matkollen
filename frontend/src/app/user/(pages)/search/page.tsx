@@ -58,7 +58,7 @@ function SearchPage() {
     return (
     <>  
         <div className="search-page">
-         <img src="https://source.unsplash.com/featured/?food" alt="food" className="search-img" width="100%" height="450"/> 
+         <img src={"https://source.unsplash.com/random/500x300/?food"} alt="food" className="search-img" width="100%"/> 
         </div> 
             <div>
             {

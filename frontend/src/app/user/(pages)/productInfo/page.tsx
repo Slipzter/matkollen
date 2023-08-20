@@ -81,21 +81,23 @@ function ProductInfoPage() {
       <section className="product-info__card-section">
         <article className="card product-info__energy-card">
           <h3>Energi per 100g</h3>
-          <h2>{productData.energi_kcal} Kcal</h2>
+          <h4 className="product-info__energy-card__kcal">{productData.energi_kcal} Kcal</h4>
         </article>
           <NutrientCard name={'Kolhydrater'} color={'blueviolet'} percentage={parseInt(productData.kolhydrater_g)}/>
           <NutrientCard name={'Fett'} color={'orange'} percentage={parseInt(productData.fett_totalt_g)}/>
           <NutrientCard name={'Protein'} color={'green'} percentage={parseInt(productData.protein_g)}/>
       </section>
       <div>
-          <h3 className="selected-info-title">Dina valda alternativ</h3>
+          <h3 className="selected-info-title">Produkten innehåller:</h3>
           <ul className="card-lists">
           {selectedOptionsLocalStorage.slice(1).map((item: any, index) => {
-            return (
-            <li className="product-info__energy-card" key={index}>
-              <NutrientCard name={item.text}color={"red"} percentage={productData[item.value]} />
-              </li>
-            )
+            if (productData[item.value] > 0) {
+              return (
+                <li className="product-info__energy-card" key={index}>
+                  <NutrientCard name={item.text}color={"red"} percentage={productData[item.value]} />
+                  </li>
+                )
+            }
           })}
         </ul>
         </div>

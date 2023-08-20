@@ -86,9 +86,9 @@ function UserProfile(){
             <option value="selen">Selen (μg)</option>
             <option value="sockerarter_g">Sockerarter (g)</option>
             <option value="stearinsyra_g">Stearinsyra (g)</option>
-            <option value="summa_enkelomättade_fettsyror_g">Summa Enkelomättade Fettsyror (g)</option>
-            <option value="summa_fleromättade_fettsyror_g">Summa Fleromättade Fettsyror (g)</option>
-            <option value="summa_mättade_fettsyror_g">Summa Mättade Fettsyror (g)</option>
+            <option value="summa_enkelomättade_fettsyror_g">Enkelomättade Fettsyror (g)</option>
+            <option value="summa_fleromättade_fettsyror_g">Fleromättade Fettsyror (g)</option>
+            <option value="summa_mättade_fettsyror_g">Mättade Fettsyror (g)</option>
             <option value="tiamin_mg">Tiamin (mg)</option>
             <option value="tillsatt_socker_g:">Tillsatt Socker (g)</option>
             <option value="vatten_g">Vatten (g)</option>

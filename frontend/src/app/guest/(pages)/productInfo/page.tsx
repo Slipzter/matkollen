@@ -63,7 +63,7 @@ function ProductInfoPage() {
       <section className="product-info__card-section">
         <article className="card product-info__energy-card">
           <h3>Energi per 100g</h3>
-          <h2>{productData.energi_kcal} Kcal</h2>
+          <h4 className="product-info__energy-card__kcal">{productData.energi_kcal} Kcal</h4>
         </article>
           <NutrientCard name={'Kolhydrater'} color={'blueviolet'} percentage={parseInt(productData.kolhydrater_g)}/>
           <NutrientCard name={'Fett'} color={'orange'} percentage={parseInt(productData.fett_totalt_g)}/>

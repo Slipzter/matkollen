@@ -128,10 +128,11 @@ header {
 
 .search-page {
   width:100vw;
-  height:500px
+  height:300px
 }
 
 .search-img{
+  filter: blur(2px);
   margin-top:20px;
   display: block;
 }
@@ -180,6 +181,11 @@ header {
 .product-info__energy-card {
   height: 8em;
   margin: 1em 0;
+}
+
+.product-info__energy-card__kcal {
+  color: #ffaa00;
+  font-size: 1.5em;
 }
 
 .nutrient-card {

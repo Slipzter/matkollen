@@ -47,7 +47,7 @@ function SearchPage() {
     return (
     <>   
         <div className="search-page">
-         <img src="https://source.unsplash.com/featured/?food" width="100%" height="450" alt="food" className="search-img" /> 
+         <img src="https://source.unsplash.com/random/500x300/?food" width="100%" alt="food" className="search-img" /> 
         </div> 
             <div>
             {products.map((product: Product, index: number)=>{
