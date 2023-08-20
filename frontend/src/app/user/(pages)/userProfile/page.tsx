@@ -29,12 +29,20 @@ function UserProfile(){
         setCurrentItem(object);
     }
 
-    const handleAddOption = ()=>{
+    const handleAddOption = () => {
         if (selectedItems && currentItem?.value && !selectedItems.find((element: any) => element.value === currentItem.value)) {
             setSelectedItems([...selectedItems, currentItem]);
             setCurrentItem(undefined);
         }
     };
+
+    const removePreference = (text: string) => {
+        if (selectedItems.includes(text)) {
+            const index = selectedItems.indexOf(text);
+            
+        }
+        
+    }
 
 
     return (

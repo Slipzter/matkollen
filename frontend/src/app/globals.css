@@ -379,13 +379,6 @@ nav {
   margin: 0 40px 40px 40px;
   padding: 20px;
 }
-.selected-list li {
-  font-size: 18px;
-  margin-bottom: 10px;
-  background-color: #fff;
-  box-shadow: 7px 6px 9px 1px rgba(244, 197, 68, 0.602);
-  padding:20px;
-}
 
 
 .prefences{
@@ -396,6 +389,13 @@ nav {
 .preference-card {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 7px 6px 9px 1px rgba(244, 197, 68, 0.602);
+  height: 70px;
+  padding: 0 20px;
 }
 
 .preference-card:hover {
@@ -403,7 +403,13 @@ nav {
 }
 
 .preference-card__button {
-  
+  border: none;
+  font-size: 1.5em;
+  background-color: transparent;
+}
+
+.preference-card__button:hover {
+  color: red;
 }
 
 h3 {

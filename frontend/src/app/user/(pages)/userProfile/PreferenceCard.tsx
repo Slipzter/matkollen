@@ -13,7 +13,7 @@ function PreferenceCard(props: Preference) {
 
   return (
     <li onClick={handleClick} className="preference-card">{props.name}
-		<button style={{display: buttonDisplay}} className="preference-card__button">Remove</button>
+		<button style={{display: buttonDisplay}} className="preference-card__button"><i className="fa fa-times"></i></button>
 	</li>
   )
 }
