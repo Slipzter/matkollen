@@ -23,11 +23,7 @@ export default function RootLayout({
       <>
         <header className='nav-header'>
           <button className="nav-back nav-button" onClick={handleGoBack}><i className="fa fa-arrow-circle-left"></i></button>
-          <nav>
-            <ul>
-              <Link className="nav-home nav-button" href="/guest/home"><i className="fa fa-search"></i></Link>
-            </ul>
-          </nav>
+          <Link className="nav-home nav-button" href="/guest/home"><i className="fa fa-search"></i></Link>
         </header>
         {children}
       </>

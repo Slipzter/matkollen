@@ -31,7 +31,7 @@ const team = () =>{
                     We are incredibly proud of our team's accomplishment and excited to share this app with you.<br /><br />
                     
                 </p>
-
+                <div className="card-team__container">
                 <div className="card-team">
                 <img src="su.png" alt="Avatar" className="avatar"/>
                 <div className="container-team">
@@ -52,8 +52,9 @@ const team = () =>{
                 <img src="Ilija.png" alt="Avatar" className="avatar"/>
                 <div className="container-team">
                     <h5><b>Ilija Krilovic</b></h5>          
-                    <p>Full stack developer</p> 
+                    <p className="ilija-title">Full stack developer</p> 
                     <Link href={"https://github.com/ica1130"}><img className="team-icons" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" /></Link> 
+                </div>
                 </div>
                 </div>
             </div>
