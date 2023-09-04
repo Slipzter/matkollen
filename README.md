@@ -14,6 +14,8 @@ The app's key feature include a comprehensive food database with detailed inform
 It also integrates with a localized Swedish food database to ensure the informaton is relevant and practical for users. This database is updated daily.
 #
 
+[Video Demo](https://www.youtube.com/watch?v=SqmmrA9Tm7w)
+
 [Link to our Trello Board](https://trello.com/b/bJTRNbJv/blue-tea-final-project)  
 
 [Promotional Video](https://www.youtube.com/watch?v=pcyGemriPN8) 
