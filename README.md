@@ -18,7 +18,7 @@ It also integrates with a localized Swedish food database to ensure the informat
 
 [Link to our Trello Board](https://trello.com/b/bJTRNbJv/blue-tea-final-project)  
 
-[Promotional Video](https://www.youtube.com/watch?v=pcyGemriPN8) 
+[Promotional Video](https://www.youtube.com/watch?v=xnKFSuDbNJg) 
 
 [Figma Sketch](https://www.figma.com/file/zQQndjUcgvAKwioPHQh8Vi/BlueTea-Project?type=design&node-id=0%3A1&mode=design&t=sRHCVqrZlFi5CZiI-1)
 
